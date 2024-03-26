@@ -13,7 +13,6 @@ alt + shift + o         : komorebic reload-configuration
 alt + shift + return    : start 'C:/Program Files/Alacritty/alacritty.exe'
 
 # Focus windows
-
 alt + h                 : komorebic focus left
 alt + j                 : komorebic focus down
 alt + k                 : komorebic focus up
@@ -36,7 +35,7 @@ alt + left              : komorebic stack left
 alt + down              : komorebic stack down
 alt + up                : komorebic stack up
 alt + right             : komorebic stack right
-alt + oem_1             : komorebic unstack # oem_1 is ;
+alt + oem_5             : komorebic unstack # oem_5 is \
 alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
 alt + oem_6             : komorebic cycle-stack next # oem_6 is ]
 
@@ -47,8 +46,8 @@ alt + shift + oem_plus  : komorebic resize-axis vertical increase
 alt + shift + oem_minus : komorebic resize-axis vertical decrease
 
 # Manipulate windows
-alt + t                 : komorebic toggle-float
-alt + shift + f         : komorebic toggle-monocle
+alt + space             : komorebic toggle-monocle
+alt + shift + space     : komorebic toggle-float
 
 # Window manager options
 alt + shift + r         : komorebic retile
@@ -56,8 +55,8 @@ alt + shift + r         : komorebic retile
 alt + p                 : komorebic toggle-pause
 
 # Layout
-alt + s                 : komorebic flip-layout horizontal
-alt + v                 : komorebic flip-layout vertical
+alt + v                 : komorebic flip-layout horizontal
+alt + s                 : komorebic flip-layout vertical
 
 # Workspaces
 alt + 1                 : komorebic focus-workspace 0
