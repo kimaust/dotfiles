@@ -24,19 +24,11 @@
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -83,6 +75,22 @@
 # export LANG=en_US.UTF-8
 
 ### START
+source $HOME/dotfiles/zsh/antigen.zsh
+
+# Load the oh-my-zsh library for some bundles
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle command-not-found
+
+# ZSH syntax highlighting bundle. It must be last.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
+
+#
+#
 # Enable command autocompletion
 autoload -Uz compinit
 compinit
@@ -104,7 +112,6 @@ export HISTFILE="$HOME/.history"
 setopt autocd
 
 # Classic rousell
-
 prompt_mytheme_setup() {
     PS1="%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%c%{$reset_color%} "
 }
@@ -126,18 +133,6 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Syntax highlighting
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export WINDOWS_USERNAME="k"
 
