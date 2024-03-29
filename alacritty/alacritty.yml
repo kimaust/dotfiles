@@ -5,6 +5,13 @@ env:
   TERM: xterm-256color
   LC_CTYPE: en_US.UTF-8
 
+cursor:
+  style:
+    blinking: Always
+
+  blink_interval: 500
+  blink_timeout: 0
+
 key_bindings:
   # (Windows, Linux, and BSD only)
   - { key: V, mods: Control|Shift, action: Paste }
