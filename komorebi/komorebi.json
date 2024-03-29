@@ -7,7 +7,7 @@
   "default_container_padding": 0,
   "border_padding": 0,
   "border_offset": 0,
-  "border_width": 1,
+  "border_width": 2,
   "mouse_follows_focus": false,
   "active_window_border": true,
   "active_window_border_colours": {

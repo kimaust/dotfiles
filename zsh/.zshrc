@@ -50,7 +50,9 @@
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
+
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -62,13 +64,14 @@
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+
 # Antigen plugin manager
 source $HOME/dotfiles/zsh/antigen.zsh
 
 # Load the oh-my-zsh library for some bundles
 antigen use oh-my-zsh
 
-antigen bundle git
+antigen bundle gitfast
 antigen bundle command-not-found
 
 # ZSH syntax highlighting bundle. It must be last.
@@ -83,7 +86,7 @@ compinit
 # Enable cache for the completions
 zstyle ':completion::complete:*' use-cache 1
 # Tune completion styles
-#zstyle ':completion:*:descriptions' format '%U%B%d%b%u' 
+#zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 #zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 # Enable prompt theme system
@@ -91,8 +94,8 @@ autoload -Uz promptinit
 promptinit
 
 # Set history size and file
-export HISTSIZE=1000 
-export HISTFILE="$HOME/.history" 
+export HISTSIZE=1000
+export HISTFILE="$HOME/.history"
 
 # Auto cd to directory without cd
 setopt autocd
@@ -117,31 +120,48 @@ else
   export EDITOR='nvim'
 fi
 
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 export WINDOWS_USERNAME="k"
 
 # Miscellaenous
-alias ls="ls -la --color"
+# alias ls="ls -la --color"
 
 # WSL settings
 alias winc="cd /mnt/c/"
+
 alias winy="cd /mnt/y/"
 
 # Vim settings
 alias vi=nvim
 alias vim=nvim
+export XDG_CONFIG_HOME="$HOME/dotfiles"
 
 # Komorebi
 alias komorebi="C:/Program\ Files/komorebi/bin/komorebic.exe start --whkd --config $HOME/dotfiles/komorebi/komorebi.json"
 alias komorebiwsl="/mnt/c/Program\ Files/komorebi/bin/komorebic.exe start --whkd --config $HOME/dotfiles/komorebi/komorebi.json"
+
+
+# Git
+# Autocomplete only the name of branches and files locally.
+__git_files () {
+    _wanted files expl 'local files' _files
+}
+# Disable checkout completion of remote branches.
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+# Disable checkout completion of remote branches for zsh.
+zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+
+setx WHKD_CONFIG_HOME "$HOME/dotfiles/komorebi" > /dev/null 2>&1
 export WHKD_CONFIG_HOME="$HOME/dotfiles/komorebi"
 export WSLENV="$WSLENV:WHKD_CONFIG_HOME/w"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # nnn
 n ()
@@ -153,7 +173,9 @@ n ()
         return
     }
 
+
     # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+
     # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
     # see. To cd on quit only on ^G, remove the "export" and make sure not to
     # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
@@ -161,6 +183,7 @@ n ()
     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+
     # stty start undef
     # stty stop undef
     # stty lwrap undef
@@ -168,6 +191,7 @@ n ()
 
     # The command builtin allows one to alias nnn to n, if desired, without
     # making an infinitely recursive alias
+
     command nnn "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
@@ -175,3 +199,6 @@ n ()
         rm -f -- "$NNN_TMPFILE" > /dev/null
     }
 }
+
+# Immersive
+source $HOME/immersive.zsh > /dev/null 2>&1
