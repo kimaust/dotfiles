@@ -12,6 +12,11 @@ cursor:
   blink_interval: 500
   blink_timeout: 0
 
+fonts:
+  normal:
+    family: "FiraCode Nerd Font Mono"
+  size: 16
+
 key_bindings:
   # (Windows, Linux, and BSD only)
   - { key: V, mods: Control|Shift, action: Paste }

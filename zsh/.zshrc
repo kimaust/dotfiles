@@ -127,7 +127,7 @@ fi
 export WINDOWS_USERNAME="k"
 
 # Miscellaenous
-# alias ls="ls -la --color"
+alias ls="ls -la --color"
 
 # WSL settings
 alias winc="cd /mnt/c/"
