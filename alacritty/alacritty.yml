@@ -12,10 +12,16 @@ cursor:
   blink_interval: 500
   blink_timeout: 0
 
-fonts:
+font:
   normal:
-    family: "FiraCode Nerd Font Mono"
-  size: 16
+    family: FiraCode Nerd Font Mono
+    style: Medium
+
+  bold:
+    family: FiraCode Nerd Font Mono
+    style: Bold
+
+  size: 10
 
 key_bindings:
   # (Windows, Linux, and BSD only)
