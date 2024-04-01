@@ -1,1 +1,1 @@
-ripgrep
+ripgrep unzip luarocks
