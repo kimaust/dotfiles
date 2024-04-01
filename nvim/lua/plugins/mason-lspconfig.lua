@@ -8,6 +8,7 @@ return {
 				--"asm_lsp",
 				"lua_ls",
 				"clangd",
+				"omnisharp",
 				--"rust_analyzer",
 				"vimls",
 				"bashls",

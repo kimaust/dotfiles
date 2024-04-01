@@ -74,6 +74,17 @@ require("lazy").setup({
 		end,
 	},
 	--require("plugins.indent-blankline"),
+	{
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			local nvim_tree = require("nvim-tree")
+			nvim_tree.setup({
+				view = {
+					side = "right",
+				},
+			})
+		end,
+	},
 	{ "folke/neodev.nvim", opts = {} },
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
