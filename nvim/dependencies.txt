@@ -1,1 +1,1 @@
-ripgrep unzip luarocks
+ripgrep unzip luarocks golang

@@ -16,97 +16,65 @@ require("lazy").setup({
 	require("plugins.mason"),
 	require("plugins.mason-lspconfig"),
 	{
-		"stevearc/conform.nvim",
-		opts = {},
-		event = {
-			"BufReadPre",
-			"BufNewFile",
-		},
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		config = function()
-			local conform = require("conform")
-			conform.setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-					html = { "prettierd" },
-					css = { "prettierd" },
-					json = { "prettierd" },
-					javascript = { "prettierd" },
-					javascriptreact = { "prettierd" },
-					typescript = { "prettierd" },
-					typescriptreact = { "prettierd" },
+			local mason_tool_installer = require("mason-tool-installer")
+
+			mason_tool_installer.setup({
+				ensure_installed = {
+					"prettierd",
+					"eslint_d",
+					"stylua",
+					"luacheck",
+					"bash-language-server",
+					"lua-language-server",
+					"vim-language-server",
+					"shellcheck",
+					"misspell",
+					"editorconfig-checker",
 				},
-				-- Set up format on save
-				format_on_save = {
-					async = false,
-					timeout_ms = 500,
-					lsp_fallback = false,
-				},
-				notify_on_error = true,
+				auto_update = false,
+				run_on_start = true,
 			})
-			--{ desc = "Format file or range in visual mode." }
-			vim.keymap.set({ "n", "v" }, "<leader>rf", function()
-				conform.format({
-					async = false,
-					timeout_ms = 500,
-					lsp_fallback = false,
-				})
-			end)
 		end,
 	},
-	--{ "folke/neodev.nvim", opts = {} },
+	require("plugins.conform"),
 	require("plugins.nvim-treesitter"),
 	require("plugins.nvim-treesitter-textobjects"),
 	require("plugins.telescope"),
 	require("plugins.telescope-fzf-native"),
 	require("plugins.dressing"),
+	require("plugins.nvim-lspconfig"),
+	require("plugins.nvim-lint"),
+	require("plugins.nvim-cmp"),
+	require("plugins.comment"),
 	{
-		"neovim/nvim-lspconfig",
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
 		config = function()
-			-- Setup language servers.
-			local lspconfig = require("lspconfig")
+			require("copilot").setup({
+				panel = {
+					enabled = true,
+					auto_refresh = false,
+					keymap = {
+						jump_prev = "[[",
+						jump_next = "]]",
+						accept = "<CR>",
+						refresh = "gr",
 
-			-- Global mappings.
-			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
-			vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-			vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
-
-			-- Use LspAttach autocommand to only map the following keys
-			-- after the language server attaches to the current buffer
-			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-				callback = function(ev)
-					-- Enable completion triggered by <c-x><c-o>
-					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-					-- Buffer local mappings.
-					-- See `:help vim.lsp.*` for documentation on any of the below functions
-					local opts = { buffer = ev.buf }
-					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-					vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-					vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-					vim.keymap.set("n", "<space>wl", function()
-						print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-					end, opts)
-					vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-					vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-					vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-					vim.keymap.set("n", "<space>f", function()
-						vim.lsp.buf.format({ async = true })
-					end, opts)
-				end,
+						open = "<M-CR>",
+					},
+					layout = {
+						position = "bottom", -- | top | left | right
+						ratio = 0.4,
+					},
+				},
 			})
 		end,
 	},
-	require("plugins.comment"),
+	--require("plugins.indent-blankline"),
+	{ "folke/neodev.nvim", opts = {} },
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	"folke/neodev.nvim",

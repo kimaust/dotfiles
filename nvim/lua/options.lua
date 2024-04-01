@@ -1,11 +1,13 @@
 -- Set up leader key.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set('n', '<Leader>E', "<Cmd>Ex<CR>", { noremap = true, silent=true})
+vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
 
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
 vim.opt.relativenumber = true
+-- Always draw sign to avoid resizing when in normal mode.
+vim.opt.signcolumn = "yes"
 
 -- Split new window to below and right instead of top and left.
 vim.opt.splitbelow = true
@@ -31,7 +33,7 @@ vim.opt.virtualedit = "block"
 -- Have a separate window for matches.
 vim.opt.inccommand = "split"
 
--- Ignore case when searching. Note that neovim commands are in lowercase 
+-- Ignore case when searching. Note that neovim commands are in lowercase
 -- whereas custom plugins are always capital.
 vim.opt.ignorecase = true
 -- Override the ignore case option if the pattern contains uppercase letters.
@@ -66,7 +68,6 @@ vim.opt.history = 1000
 -- Set backup extension.
 -- vim.opt.bex = extension
 
-
 -- Wrap around break instead of mid-word
 -- vim.opt.lbr = true
 
@@ -91,4 +92,3 @@ vim.opt.cursorline = true
 -- map KEY KEYSTROEKS
 --map <leader><key> <command>
 --map <leader>
-
