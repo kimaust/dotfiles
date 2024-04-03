@@ -1,15 +1,16 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
+	lazy = false,
 	config = function()
 		local configs = require("mason-lspconfig")
 
 		configs.setup({
 			ensure_installed = {
-				--"asm_lsp",
+				"asm_lsp",
 				"lua_ls",
 				"clangd",
 				"omnisharp",
-				--"rust_analyzer",
+				"rust_analyzer",
 				"vimls",
 				"bashls",
 				"awk_ls",
@@ -17,9 +18,6 @@ return {
 				"cssls",
 				"tsserver",
 				"tailwindcss",
-				--"eslint_d",
-				-- "prettierd",
-				--"clang-format",
 			},
 			automatic_installation = true,
 		})
@@ -28,6 +26,18 @@ return {
 				local lspconfig = require("lspconfig")
 				lspconfig[server_name].setup({})
 			end,
+			-- ["lua_ls"] = function()
+			-- 	local lspconfig = require("lspconfig")
+			-- 	lspconfig.lua_ls.setup({
+			-- 		settings = {
+			-- 			Lua = {
+			-- 				diagnostics = {
+			-- 					globals = { "vim" },
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
 		})
 	end,
 }

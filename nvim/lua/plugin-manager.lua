@@ -11,85 +11,40 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	require("plugins.nightfox"),
-	require("plugins.mason"),
-	require("plugins.mason-lspconfig"),
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		config = function()
-			local mason_tool_installer = require("mason-tool-installer")
-
-			mason_tool_installer.setup({
-				ensure_installed = {
-					"prettierd",
-					"eslint_d",
-					"stylua",
-					"luacheck",
-					"bash-language-server",
-					"lua-language-server",
-					"vim-language-server",
-					"shellcheck",
-					"misspell",
-					"editorconfig-checker",
-				},
-				auto_update = false,
-				run_on_start = true,
-			})
-		end,
-	},
-	require("plugins.conform"),
-	require("plugins.nvim-treesitter"),
-	require("plugins.nvim-treesitter-textobjects"),
-	require("plugins.telescope"),
-	require("plugins.telescope-fzf-native"),
-	require("plugins.dressing"),
-	require("plugins.nvim-lspconfig"),
-	require("plugins.nvim-lint"),
-	require("plugins.nvim-cmp"),
-	require("plugins.comment"),
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				panel = {
-					enabled = true,
-					auto_refresh = false,
-					keymap = {
-						jump_prev = "[[",
-						jump_next = "]]",
-						accept = "<CR>",
-						refresh = "gr",
-
-						open = "<M-CR>",
-					},
-					layout = {
-						position = "bottom", -- | top | left | right
-						ratio = 0.4,
-					},
-				},
-			})
-		end,
-	},
-	--require("plugins.indent-blankline"),
-	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			local nvim_tree = require("nvim-tree")
-			nvim_tree.setup({
-				view = {
-					side = "right",
-				},
-			})
-		end,
-	},
-	{ "folke/neodev.nvim", opts = {} },
+local lazy = require("lazy")
+lazy.setup({
+	{ import = "plugins" },
+	-- require("plugins.nightfox"),
+	-- require("plugins.mason"),
+	-- require("plugins.mason-lspconfig"),
+	-- require("plugins.mason-tool-installer"),
+	-- require("plugins.conform"),
+	-- require("plugins.nvim-treesitter"),
+	-- require("plugins.nvim-treesitter-textobjects"),
+	-- require("plugins.telescope"),
+	-- require("plugins.telescope-fzf-native"),
+	-- require("plugins.dressing"),
+	-- require("plugins.nvim-lspconfig"),
+	-- require("plugins.nvim-lint"),
+	-- require("plugins.nvim-cmp"),
+	-- require("plugins.comment"),
+	-- require("plugins.copilot"),
+	-- require("plugins.nvim-tree"),
+	require("plugins.indent-blankline"),
+	-- require("plugins.nvim-dap"),
+	--    require("plugins.lualine"),
+	--"airblade/vim-gitgutter",
+	--"RRethy/vim-illuminate",
+	--require("plugins.local.last-place-cursor"),
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	"folke/neodev.nvim",
 })
 
--- Custom lua scripts
-require("plugins.last-place-cursor")
+lazy.stats({
+	-- when true, startuptime is the accurate cputime for the Neovim process.
+	-- (Linux & Macos)
+	-- this is more accurate than `nvim --startuptime`, and as such will be slightly higher
+	-- when false, startuptime is calculated based on a delta with a timestamp when lazy started.
+	real_cputime = true,
+})

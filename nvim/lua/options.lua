@@ -1,11 +1,25 @@
--- Disable netrw at the very start of your init.lua. Used for nvim-tree.
+-- Disable netrw at the very start of your init.lua. For nvim-tree.
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Set up leader key.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>1", "1gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>2", "2gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>3", "3gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>4", "4gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>5", "5gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", "gt", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Left>", "gT", { noremap = true, silent = true })
+
+-- Remap u to Ctrl-z.
+vim.keymap.set("n", "u", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-z>", "u", { noremap = true, silent = true })
+
+-- vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { noremap = true, silent = true })
 
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
