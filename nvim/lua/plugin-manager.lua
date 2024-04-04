@@ -13,7 +13,16 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy = require("lazy")
 lazy.setup({
-	{ import = "plugins" },
+	{
+		import = "plugins",
+	},
+}, {
+	change_detection = {
+		-- automatically check for config file changes and reload the ui
+		enable = false,
+		notify = false,
+	},
+}, {
 	-- require("plugins.nightfox"),
 	-- require("plugins.mason"),
 	-- require("plugins.mason-lspconfig"),
