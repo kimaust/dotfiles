@@ -6,6 +6,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Disable timeout
+vim.opt.timeout = false
+vim.opt.ttimeout = false
+
 vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>1", "1gt", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>2", "2gt", { noremap = true, silent = true })

@@ -127,6 +127,8 @@ fi
 export WINDOWS_USERNAME="k"
 
 # Miscellaenous
+# Disables folder highlight in WSL.
+export LS_COLORS=$LS_COLORS:'ow=1;34:';
 alias ls="ls -la --color"
 
 # WSL settings

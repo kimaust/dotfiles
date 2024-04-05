@@ -6,11 +6,11 @@ return {
 
 		configs.setup({
 			ensure_installed = {
-				"asm_lsp",
+				--"asm_lsp",
 				"lua_ls",
 				"clangd",
 				"omnisharp",
-				"rust_analyzer",
+				-- "rust_analyzer",
 				"vimls",
 				"bashls",
 				"awk_ls",

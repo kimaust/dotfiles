@@ -16,6 +16,9 @@ lazy.setup({
 	{
 		import = "plugins",
 	},
+	{
+		import = "plugins.local",
+	},
 }, {
 	change_detection = {
 		-- automatically check for config file changes and reload the ui
@@ -44,7 +47,6 @@ lazy.setup({
 	--    require("plugins.lualine"),
 	--"airblade/vim-gitgutter",
 	--"RRethy/vim-illuminate",
-	--require("plugins.local.last-place-cursor"),
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	"folke/neodev.nvim",
