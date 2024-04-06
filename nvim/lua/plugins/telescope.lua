@@ -50,5 +50,9 @@ return {
 		vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {})
 		vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
 		vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
+		vim.keymap.set("n", "<leader>gbc", builtin.git_bcommits, {})
+		vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
+		vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
+		vim.keymap.set("n", "<leader>gsh", builtin.git_stash, {})
 	end,
 }
