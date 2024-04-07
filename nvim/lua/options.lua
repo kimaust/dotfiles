@@ -83,6 +83,8 @@ vim.opt.colorcolumn = "80,100"
 
 -- Show incomplete commands in the status bar.
 vim.opt.showcmd = true
+-- Show partial command in the status line when typing them.
+vim.opt.showcmdloc = "statusline"
 
 -- Show a menu in the status bar when using tab completion.
 vim.opt.wildmenu = true
