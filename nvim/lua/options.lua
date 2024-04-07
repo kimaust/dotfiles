@@ -26,6 +26,9 @@ vim.keymap.set("n", "<C-z>", "u", { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { noremap = true, silent = true })
 
+-- Enable 24-bit colour.
+vim.opt.termguicolors = true
+
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
 vim.opt.relativenumber = true

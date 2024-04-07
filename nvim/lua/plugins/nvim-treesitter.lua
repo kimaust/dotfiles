@@ -34,6 +34,7 @@ return {
 				"luadoc",
 				"make",
 				"markdown",
+				"markdown_inline",
 				"python",
 				"regex",
 				"rust",

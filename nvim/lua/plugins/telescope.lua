@@ -37,10 +37,15 @@ return {
 					--theme = "dropdown",
 				},
 			},
-			-- extensions = {},
+			-- extensions = {
+			-- 	fzf = {
+			-- 		fuzzy = true,
+			-- 	},
+			-- },
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
+		telescope.load_extension("noice")
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<C-p>", builtin.find_files, {})
