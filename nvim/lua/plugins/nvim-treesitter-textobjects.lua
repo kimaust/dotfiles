@@ -130,6 +130,10 @@ return {
 							query = "@call.outer",
 							desc = "Next function call start",
 						},
+						["]a"] = {
+							query = "@parameter.outer",
+							desc = "Next argument start",
+						},
 						-- ["]c"] = {
 						-- 	query = "@class.outer",
 						-- 	desc = "Next class start",
@@ -151,6 +155,10 @@ return {
 						["]C"] = {
 							query = "@call.outer",
 							desc = "Next function call end",
+						},
+						["]A"] = {
+							query = "@parameter.outer",
+							desc = "Next argument end",
 						},
 						-- ["]C"] = {
 						-- 	query = "@class.outer",
@@ -174,6 +182,10 @@ return {
 							query = "@call.outer",
 							desc = "Previous function call start",
 						},
+						["[a"] = {
+							query = "@parameter.outer",
+							desc = "Previous argument start",
+						},
 						-- ["[c"] = {
 						-- 	query = "@class.outer",
 						-- 	desc = "Previous class start",
@@ -195,6 +207,10 @@ return {
 						["[F"] = {
 							query = "@function.outer",
 							desc = "Previous function end",
+						},
+						["[A"] = {
+							query = "@parameter.outer",
+							desc = "Previous argument end",
 						},
 						-- ["[C"] = {
 						-- 	query = "@class.outer",

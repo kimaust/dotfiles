@@ -43,13 +43,12 @@ lazy.setup({
 	-- require("plugins.copilot"),
 	-- require("plugins.nvim-tree"),
 	require("plugins.indent-blankline"),
+	"folke/which-key.nvim",
+	{ "folke/neoconf.nvim" },
 	-- require("plugins.nvim-dap"),
 	--    require("plugins.lualine"),
 	--"airblade/vim-gitgutter",
 	--"RRethy/vim-illuminate",
-	"folke/which-key.nvim",
-	{ "folke/neoconf.nvim", cmd = "Neoconf" },
-	"folke/neodev.nvim",
 })
 
 lazy.stats({

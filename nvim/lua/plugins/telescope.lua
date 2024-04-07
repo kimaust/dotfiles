@@ -37,18 +37,25 @@ return {
 					--theme = "dropdown",
 				},
 			},
+			-- extensions = {},
 		})
 		telescope.load_extension("fzf")
+		telescope.load_extension("file_browser")
 
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-		-- vim.keymap.set("n", "<leader>fe", builtin.file_browser, {})
+		vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+
+		vim.keymap.set("n", "<leader>fb", "<Cmd>Telescope file_browser<CR>", {})
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-		vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {})
 		vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
 		vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
+		vim.keymap.set("n", "<leader>fr", builtin.registers, {})
+
+		vim.keymap.set("n", "<leader>bl", builtin.buffers, {})
+
+		vim.keymap.set("n", "<leader>sf", builtin.current_buffer_fuzzy_find, {})
+
 		vim.keymap.set("n", "<leader>gc", builtin.git_commits, {})
 		vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
 		vim.keymap.set("n", "<leader>gbc", builtin.git_bcommits, {})

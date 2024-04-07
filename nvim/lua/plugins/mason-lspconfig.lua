@@ -8,6 +8,7 @@ return {
 			ensure_installed = {
 				--"asm_lsp",
 				"lua_ls",
+				"jsonls",
 				"clangd",
 				"omnisharp",
 				-- "rust_analyzer",
