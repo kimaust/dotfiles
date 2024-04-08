@@ -11,6 +11,7 @@
   "copilot-lualine": { "branch": "main", "commit": "9e226cf8f4653e13ec282f5878d66aa435899c8c" },
   "copilot.lua": { "branch": "master", "commit": "f7612f5af4a7d7615babf43ab1e67a2d790c13a6" },
   "dressing.nvim": { "branch": "master", "commit": "18e5beb3845f085b6a33c24112b37988f3f93c06" },
+  "fzf-lua": { "branch": "main", "commit": "45555335557f79b909fa53a7c313940713aa0e14" },
   "lazy.nvim": { "branch": "main", "commit": "7a2617575a8c990394c0f28a8e980b33b72e1b0d" },
   "lualine.nvim": { "branch": "master", "commit": "b5e8bb642138f787a2c1c5aedc2a78cb2cebbd67" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "9dfcf2036c223920826140f0151d929a43f9eceb" },

@@ -59,6 +59,6 @@ return {
 		vim.cmd.colorscheme("dayfox")
 
 		-- Set up lualine after colorscheme.
-		require("lualine").setup()
+		require("lualine").setup({})
 	end,
 }

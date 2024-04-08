@@ -5,9 +5,15 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
+		local fzf_opts = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+			-- the default case_mode is "smart_case"
+		}
 		telescope.setup({
 			defaults = {
-				--previewer = false,
 				-- Add debounce of 100ms to workaround slowness in big projects.
 				debounce = 100,
 				layout_strategy = "vertical",
@@ -35,24 +41,24 @@ return {
 			},
 			pickers = {
 				find_files = {
+					-- find_command = { "fdfind", "--type", "f", "--no-ignore" },
 					previewer = false,
+					-- sorter = telescope.extensions.fzf.native_fzf_sorter(fzf_opts),
 					-- ivy, dropdown, cursor
 					-- NOTE: Overrides the global layout_strategy
 					--theme = "dropdown",
 				},
 			},
-			-- extensions = {
-			-- 	fzf = {
-			-- 		fuzzy = true,
-			-- 	},
-			-- },
+			extensions = {
+				fzf = fzf_opts,
+			},
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
 		telescope.load_extension("noice")
 
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+		-- vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 
 		vim.keymap.set("n", "<leader>fb", "<Cmd>Telescope file_browser<CR>", {})
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
