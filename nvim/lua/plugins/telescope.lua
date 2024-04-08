@@ -10,10 +10,13 @@ return {
 				--preview = false,
 				layout_strategy = "vertical",
 				sorting_strategy = "ascending",
+				selection_strategy = "reset",
+				scroll_strategy = "limit",
+				path_dispaly = "absolute",
 				layout_config = {
 					vertical = {
 						prompt_position = "top",
-						mirror = true,
+						-- mirror = true,
 					},
 				},
 				mappings = {
@@ -32,6 +35,9 @@ return {
 			},
 			pickers = {
 				find_files = {
+					previewer = false,
+					-- Add debounce of 100ms to workaround slowness in big projects.
+					debounce = 100,
 					-- ivy, dropdown, cursor
 					-- NOTE: Overrides the global layout_strategy
 					--theme = "dropdown",
