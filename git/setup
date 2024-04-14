@@ -1,0 +1,11 @@
+Once PAT is set up in GitHub, use the following to cache the given record once
+logged-in.
+
+For project:
+git config credential.helper store
+
+Global:
+git config --global credential.helper store
+
+Ensure it uses <CR><LF>
+git config --global core.autocrlf input
