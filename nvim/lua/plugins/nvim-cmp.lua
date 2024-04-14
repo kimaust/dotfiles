@@ -14,7 +14,7 @@ return {
 			-- Replace <CurrentMajor> by the latest released major (first number of latest release)
 			version = "v2.*",
 			-- install jsregexp (optional!).
-			build = "make install_jsregexp",
+			-- build = "make install_jsregexp",
 		},
 		-- Completion source for the lua snippet engine
 		"saadparwaiz1/cmp_luasnip",

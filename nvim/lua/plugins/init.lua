@@ -3,6 +3,8 @@ return {
 	{ "folke/neodev.nvim", opts = {} },
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
+	{ "junegunn/fzf" },
+	{ "junegunn/fzf.vim" },
 	{
 		"windwp/nvim-autopairs",
 		config = true,

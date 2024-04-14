@@ -4,7 +4,10 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		-- Prefer git to workaround issues with certificates.
-		require("nvim-treesitter.install").prefer_git = true
+		local treesitter_install = require("nvim-treesitter.install")
+		treesitter_install.prefer_git = true
+		-- Workaround the issue with msys2.
+		treesitter_install.compilers = { "clang" }
 
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
