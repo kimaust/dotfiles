@@ -204,3 +204,5 @@ n ()
 
 # Immersive
 source $HOME/immersive.zsh > /dev/null 2>&1
+
+alias emerge="emerge --ask --verbose"

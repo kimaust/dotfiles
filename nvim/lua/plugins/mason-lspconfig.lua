@@ -10,7 +10,7 @@ return {
 				"lua_ls",
 				"jsonls",
 				"clangd",
-				"omnisharp",
+				-- "omnisharp",
 				-- "rust_analyzer",
 				"vimls",
 				"bashls",

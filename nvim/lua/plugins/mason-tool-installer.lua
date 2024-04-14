@@ -13,7 +13,7 @@ return {
 				"lua-language-server",
 				"vim-language-server",
 				"shellcheck",
-				"misspell",
+				-- "misspell",
 				"editorconfig-checker",
 			},
 			auto_update = false,

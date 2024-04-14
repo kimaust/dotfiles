@@ -1,0 +1,13 @@
+1.
+
+wsl --import Gentoo G:\WSL\Gentoo\ G:\WSL\Gentoo\stage3-amd64-desktop-openrc-20240407T165048Z.tar --version 1  
+
+2.
+
+wsl -d Gentoo
+
+3.
+
+useradd -m -G wheel <put_username_here>
+passwd <put_username_here>
+
