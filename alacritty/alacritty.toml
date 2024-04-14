@@ -22,7 +22,8 @@ family = "FiraCode Nerd Font Mono"
 style = "Medium"
 
 [shell]
-program = "ubuntu"
+program = "C:/msys64/msys2_shell.cmd"
+args = ["-defterm", "-no-start", "-clang64", "-here", "-shell", "zsh"]
 
 # Shift bindings
 [[keyboard.bindings]]
