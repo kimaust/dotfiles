@@ -10,7 +10,7 @@ fi
 cd fzf
 
 # Use if cannot install to bin directory
-# make
+make
 
 # Otherwise, install to bin directory
 sudo make install

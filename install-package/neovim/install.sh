@@ -11,6 +11,6 @@ cd neovim
 
 cmake -S cmake.deps -B .deps -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build .deps
-cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo
+cmake -B build -G Ninja -D CMAKE_INSTALL_PREFIX=C:\nvim -D CMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build build
     
