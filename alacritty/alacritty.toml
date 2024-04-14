@@ -23,7 +23,7 @@ style = "Medium"
 
 [shell]
 program = "C:/msys64/msys2_shell.cmd"
-args = ["-defterm", "-no-start", "-clang64", "-here", "-shell", "zsh"]
+args = ["-defterm", "-no-start", "-use-full-path", "-clang64", "-here", "-shell", "zsh"]
 
 # Shift bindings
 [[keyboard.bindings]]

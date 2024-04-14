@@ -10,7 +10,8 @@ alt + shift + o         : komorebic reload-configuration
 # The apps will be focused if open, or launched if not open
 # alt + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
-alt + shift + return    : start 'C:/Program Files\Alacritty\alacritty.exe' --config-file='\\wsl$\Ubuntu\home\k\dotfiles\alacritty\alacritty.toml'
+# alt + shift + return    : start 'C:/Program Files\Alacritty\alacritty.exe' --config-file='\\wsl$\Ubuntu\home\k\dotfiles\alacritty\alacritty.toml'
+alt + shift + return    : start 'C:/Program Files\Alacritty\alacritty.exe' --config-file='C:\msys64\home\k\dotfiles\alacritty\alacritty.toml'
 
 # Focus windows
 alt + h                 : komorebic focus left
