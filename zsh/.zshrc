@@ -140,6 +140,8 @@ alias winy="cd /mnt/y/"
 alias vi=nvim
 alias vim=nvim
 export XDG_CONFIG_HOME="$HOME/dotfiles"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Komorebi
 alias komorebi="C:/Program\ Files/komorebi/bin/komorebic.exe start --whkd --config $HOME/dotfiles/komorebi/komorebi.json"
