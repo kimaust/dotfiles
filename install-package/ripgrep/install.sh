@@ -3,7 +3,7 @@ if [ ! -d ripgrep ]; then
     ret_code=$?
     if [ $ret_code -ne 0 ]; then
         echo "Failed to clone ripgrep"
-        exit $ret_code
+        return $ret_code
     fi
 fi
 
@@ -13,7 +13,7 @@ cargo build --release
 ret_code=$?
 if [ $ret_code -ne 0 ]; then
     echo "Failed to build ripgrep"
-    exit $ret_code
+    return $ret_code
 fi
 
 cd target/release

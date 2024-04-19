@@ -3,7 +3,7 @@ if [ ! -d fzf ]; then
     ret_code=$?
     if [ $ret_code -ne 0 ]; then
         echo "Failed to clone fzf repository. Exiting..."
-        exit $ret_code
+        return $ret_code
     fi
 fi
 
@@ -17,7 +17,7 @@ sudo make install
 ret_code=$?
 if [ $ret_code -ne 0 ]; then
     echo "Failed to install fzf. Exiting..."
-    exit $ret_code
+    return $ret_code
 fi
 
 sudo cp bin/fzf /usr/local/bin

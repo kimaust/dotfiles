@@ -1,33 +1,11 @@
--- Disable netrw at the very start of your init.lua. For nvim-tree.
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- Set up leader key.
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Disable timeout
 vim.opt.timeout = false
 vim.opt.ttimeout = false
 
-vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>1", "1gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>2", "2gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>3", "3gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>4", "4gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>5", "5gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-Right>", "gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-Left>", "gT", { noremap = true, silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Cmd>w<CR>", { noremap = true, silent = true })
-
--- Remap u to Ctrl-z.
-vim.keymap.set("n", "u", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-z>", "u", { noremap = true, silent = true })
-
--- vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { noremap = true, silent = true })
-
--- Enable 24-bit colour.
-vim.opt.termguicolors = true
+-- Fix for windows
+if vim.fn.has("win32") or vim.fn.has("win64") then
+    vim.o.shell = 'cmd'
+end
 
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
@@ -50,7 +28,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 -- Keep the cursor in the center when scrolling
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 3
 
 -- Enable cursor go past area with no characters for block mode.
 -- Useful for visual block mode.
@@ -113,10 +91,3 @@ vim.opt.hidden = true
 
 -- Show the current cursor line.
 vim.opt.cursorline = true
-
--- Re-center after scroll
--- vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Center cursor after moving down half-page"})
-
--- map KEY KEYSTROEKS
---map <leader><key> <command>
---map <leader>

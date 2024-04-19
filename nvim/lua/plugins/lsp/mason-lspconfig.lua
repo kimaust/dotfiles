@@ -10,6 +10,8 @@ return {
 				"lua_ls",
 				"jsonls",
 				"clangd",
+				-- Needs to be replaced by VSCode C# LSP when supported,
+				-- use VSCode instead for now.
 				-- "omnisharp",
 				-- "rust_analyzer",
 				"vimls",
@@ -27,18 +29,6 @@ return {
 				local lspconfig = require("lspconfig")
 				lspconfig[server_name].setup({})
 			end,
-			-- ["lua_ls"] = function()
-			-- 	local lspconfig = require("lspconfig")
-			-- 	lspconfig.lua_ls.setup({
-			-- 		settings = {
-			-- 			Lua = {
-			-- 				diagnostics = {
-			-- 					globals = { "vim" },
-			-- 				},
-			-- 			},
-			-- 		},
-			-- 	})
-			-- end,
 		})
 	end,
 }

@@ -8,7 +8,8 @@ return {
 				"prettierd",
 				"eslint_d",
 				"stylua",
-				"luacheck",
+				-- Fails on MSYS, need to check.
+				-- "luacheck",
 				"bash-language-server",
 				"lua-language-server",
 				"vim-language-server",

@@ -1,8 +1,10 @@
 return {
 	"numToStr/Comment.nvim",
-	opts = {
+	config = function()
+		local comment = require("Comment")
+		comment.setup()
 
-		-- add any options here
-	},
-	lazy = false,
+		local api = require("Comment.api")
+		vim.keymap.set("n", "<C-_>", api.toggle.linewise.current)
+	end,
 }

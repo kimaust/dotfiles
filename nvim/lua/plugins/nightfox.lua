@@ -1,12 +1,10 @@
 return {
 	"EdenEast/nightfox.nvim",
+	-- Disables this colortheme if running under VSCode.
+	-- TODO: Could investigate using this theme under VSCode.
+	cond = not vim.g.vscode,
 	lazy = false,
 	priority = 1000,
-	init = function()
-		-- Enable true color.
-		vim.opt.termguicolors = true
-		vim.opt.bg = "light"
-	end,
 	config = function()
 		local specs = {
 			dayfox = {

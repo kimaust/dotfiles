@@ -208,3 +208,7 @@ n ()
 source $HOME/immersive.zsh > /dev/null 2>&1
 
 alias emerge="emerge --ask --verbose"
+
+# fzf on Windows
+alias fzf="echo $(cygpath -u $(fzf))"
+

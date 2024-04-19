@@ -1,2 +1,6 @@
-require("options")
+require("globals.globals")
+require("globals.globals-nvim-tree")
+require("options.options")
+require("options.options-colortheme")
+require("keymaps.keymaps")
 require("plugin-manager")

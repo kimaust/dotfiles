@@ -26,15 +26,21 @@ program = "C:/msys64/msys2_shell.cmd"
 args = ["-defterm", "-no-start", "-use-full-path", "-clang64", "-here", "-shell", "zsh"]
 
 # Shift bindings
-[[keyboard.bindings]]
-chars = "\u001B[13;2u"
-key = "Return"
-mods = "Shift"
+# Prevents inserting newline while holding shift.
+# [[keyboard.bindings]]
+# chars = "\u001B[13;2u"
+# key = "Return"
+# mods = "Shift"
 
 [[keyboard.bindings]]
 chars = "\u001B[13;5u"
 key = "Return"
 mods = "Control"
+
+# [[keyboard.bindings]]
+# chars = "\u001B[63;5u"
+# key = "?"
+# mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u001B[72;5u"
