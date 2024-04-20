@@ -57,6 +57,9 @@ return {
                     end,
                 },
             },
+            grep = {
+                previewer = "builtin",
+            },
             defaults = {
                 git_icons = false,
                 file_icons = false,
