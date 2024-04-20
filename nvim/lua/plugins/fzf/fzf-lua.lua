@@ -1,7 +1,7 @@
 return {
     "ibhagwan/fzf-lua",
     -- Optional dependency for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", lazy = false },
     config = function()
         -- Workaround for MSYS2. Currently, fzf only supports cmd shell on
         -- Windows.

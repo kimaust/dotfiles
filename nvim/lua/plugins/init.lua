@@ -1,6 +1,5 @@
 return {
     "nvim-lua/plenary.nvim",
-    { "folke/neodev.nvim", opts = {} },
     {
         "windwp/nvim-autopairs",
         config = true,
