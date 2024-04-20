@@ -3,8 +3,23 @@ return {
     -- Optional dependency for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
+        -- Workaround for MSYS2. Currently, fzf only supports cmd shell on
+        -- Windows.
+        local initial_shell = vim.opt.shell:get()
+        local fzf_wrapper = function(fzf_command)
+            return function()
+                if vim.fn.has("win32") or vim.fn.has("win64") then
+                    vim.opt.shell = "cmd"
+                end
+                vim.cmd(fzf_command)
+                vim.opt.shell = initial_shell
+            end
+        end
+
         -- Calling `setup` is optional for customization.
-        require("fzf-lua").setup({
+        local fzf_lua = require("fzf-lua")
+        local actions = require("fzf-lua.actions")
+        fzf_lua.setup({
             winopts = {
                 preview = {
                     default = "bat",
@@ -32,22 +47,37 @@ return {
                 fzf_opts = {
                     ["--ansi"] = false,
                 },
+                actions = {
+                    ["ctrl-g"] = function()
+                        if vim.fn.has("win32") or vim.fn.has("win64") then
+                            vim.opt.shell = "cmd"
+                        end
+                        actions.toggle_ignore()
+                        vim.opt.shell = initial_shell
+                    end,
+                },
             },
             defaults = {
                 git_icons = false,
                 file_icons = false,
             },
         })
+        vim.keymap.set({ "n", "i", "v" }, "<C-p>", fzf_wrapper("FzfLua files"), { silent = true })
 
-        vim.keymap.set({ "n", "i", "v" }, "<C-p>", "<cmd>FzfLua files<CR>", { silent = true })
         -- vim.keymap.set({"n", "i", "v"}, "g"
-        vim.keymap.set({ "n", "i", "v" }, "<C-b>", "<cmd>FzfLua buffers<CR>", { silent = true })
-        vim.keymap.set({ "n", "i", "v" }, "<C-f>", "<cmd>FzfLua live_grep<CR>", { silent = true })
+        vim.keymap.set({ "n", "i", "v" }, "<C-b>", fzf_wrapper("FzfLua buffers"), { silent = true })
+
+        vim.keymap.set(
+            { "n", "i", "v" },
+            "<C-f>",
+            fzf_wrapper("FzfLua live_grep"),
+            { silent = true }
+        )
 
         vim.keymap.set(
             { "n", "i", "v" },
             "<leader>of",
-            "<cmd>FzfLua oldfiles<CR>",
+            fzf_wrapper("FzfLua oldfiles"),
             { silent = true }
         )
     end,

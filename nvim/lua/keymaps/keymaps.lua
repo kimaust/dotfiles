@@ -29,3 +29,8 @@ vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true 
 -- 	local half_screen_height = math.floor(vim.api.nvim_win_get_height(0) / 2)
 -- 	return half_screen_height .. "k"
 -- end, { expr = true })
+
+-- Terminal
+--
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>")
