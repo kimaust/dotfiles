@@ -23,10 +23,8 @@ return {
         local mappings = {}
         -- Syntax: t[keys] = {function, {function arguments}}
         -- Move_Cursor, time, easing_function (constant = nil)
-        mappings["<C-u>"] =
-            { "scroll", { "-vim.wo.scroll", "true", "125", nil } }
-        mappings["<C-d>"] =
-            { "scroll", { "vim.wo.scroll", "true", "125", nil } }
+        mappings["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "125", nil } }
+        mappings["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "125", nil } }
         require("neoscroll.config").set_mappings(mappings)
     end,
 }

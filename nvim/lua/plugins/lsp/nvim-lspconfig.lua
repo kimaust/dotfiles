@@ -11,8 +11,6 @@ return {
 			},
 		})
 
-		local telescope_builtin = require("telescope.builtin")
-
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 		vim.keymap.set("n", "<leader>oid", vim.diagnostic.open_float)
@@ -20,7 +18,7 @@ return {
 		vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
 		vim.keymap.set("n", "<leader>sd", "<Cmd>Telescope diagnostics bufnr=0<CR>", {})
-		vim.keymap.set("n", "<leader>sD", telescope_builtin.diagnostics, {})
+		-- vim.keymap.set("n", "<leader>sD", telescope_builtin.diagnostics, {})
 
 		-- Use LspAttach autocommand to only map the following keys
 		-- after the language server attaches to the current buffer
@@ -34,15 +32,15 @@ return {
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf }
 
-				vim.keymap.set("n", "gd", telescope_builtin.lsp_definitions, opts)
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-				vim.keymap.set("n", "gt", telescope_builtin.lsp_type_definitions, opts)
-				vim.keymap.set("n", "gi", telescope_builtin.lsp_implementations, opts)
+				vim.keymap.set("n", "gd", "<Cmd>FzfLua lsp_definitions<CR>", opts)
+				vim.keymap.set("n", "gD", "<Cmd>FzfLua lsp_declarations<CR>", opts)
+				vim.keymap.set("n", "gt", "<Cmd>FzfLua lsp_typedefs<CR>", opts)
+				vim.keymap.set("n", "gi", "<Cmd>FzfLua lsp_implementations<CR>", opts)
+				vim.keymap.set("n", "<leader>lr", "<Cmd>FzfLua lsp_references<CR>", opts)
+				vim.keymap.set("n", "<leader>lic", "<Cmd>FzfLua lsp_incoming_calls<CR>", opts)
+				vim.keymap.set("n", "<leader>loc", "<Cmd>FzfLua lsp_outgoing_calls<CR>", opts)
 
-				vim.keymap.set("n", "<leader>lic", telescope_builtin.lsp_incoming_calls, opts)
-				vim.keymap.set("n", "<leader>loc", telescope_builtin.lsp_outgoing_calls, opts)
-				vim.keymap.set("n", "<leader>ls", telescope_builtin.lsp_document_symbols, opts)
-				vim.keymap.set("n", "<leader>lr", telescope_builtin.lsp_references, opts)
+				-- vim.keymap.set("n", "<leader>ls", telescope_builtin.lsp_document_symbols, opts)
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "<leader>re", vim.lsp.buf.rename, opts)
 

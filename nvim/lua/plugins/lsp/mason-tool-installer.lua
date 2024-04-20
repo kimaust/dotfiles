@@ -7,7 +7,7 @@ return {
 			ensure_installed = {
 				"prettierd",
 				"eslint_d",
-				"stylua",
+				-- "stylua",
 				-- Fails on MSYS, need to check.
 				-- "luacheck",
 				"bash-language-server",
