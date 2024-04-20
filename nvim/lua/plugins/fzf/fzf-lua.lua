@@ -22,7 +22,9 @@ return {
         fzf_lua.setup({
             winopts = {
                 preview = {
-                    default = "bat",
+                    -- Defualt bat highlighting looks garbage, so use the builtin
+                    -- until I can figure out how to override theme.
+                    default = "builtin",
                 },
             },
             manpages = {
@@ -57,9 +59,7 @@ return {
                     end,
                 },
             },
-            grep = {
-                previewer = "builtin",
-            },
+            grep = {},
             defaults = {
                 git_icons = false,
                 file_icons = false,

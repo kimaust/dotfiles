@@ -1,6 +1,7 @@
 return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
+        local lspconfig = require("lspconfig")
         local configs = require("mason-lspconfig")
 
         configs.setup({
@@ -9,6 +10,7 @@ return {
                 "lua_ls",
                 "jsonls",
                 "clangd",
+                "emmet_language_server",
                 -- Needs to be replaced by VSCode C# LSP when supported,
                 -- use VSCode instead for now.
                 -- "omnisharp",
@@ -25,11 +27,9 @@ return {
         })
         configs.setup_handlers({
             function(server_name)
-                local lspconfig = require("lspconfig")
                 lspconfig[server_name].setup({})
             end,
             ["lua_ls"] = function()
-                local lspconfig = require("lspconfig")
                 lspconfig.lua_ls.setup({
                     settings = {
                         Lua = {
@@ -40,6 +40,22 @@ return {
                                 },
                             },
                         },
+                    },
+                })
+            end,
+            ["emmet_language_server"] = function()
+                lspconfig.emmet_language_server.setup({
+                    filetypes = {
+                        "css",
+                        "eruby",
+                        "html",
+                        "javascript",
+                        "javascriptreact",
+                        "less",
+                        "sass",
+                        "scss",
+                        "pug",
+                        "typescriptreact",
                     },
                 })
             end,
