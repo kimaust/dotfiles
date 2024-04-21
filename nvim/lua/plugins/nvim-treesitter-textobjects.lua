@@ -43,10 +43,10 @@ return {
 							query = "@assignment.inner",
 							desc = "Select inner part of an assginment",
 						},
-						["l="] = {
-							query = "@assignment.lhs",
-							desc = "Select lhs of an assignment",
-						},
+						-- ["l="] = {
+						-- 	query = "@assignment.lhs",
+						-- 	desc = "Select lhs of an assignment",
+						-- },
 						["r="] = {
 							query = "@assignment.rhs",
 							desc = "Select rhs of an assignment",

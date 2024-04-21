@@ -65,22 +65,42 @@ return {
                 file_icons = false,
             },
         })
-        vim.keymap.set({ "n", "i", "v" }, "<C-p>", fzf_wrapper("FzfLua files"), { silent = true })
+        local utils = require("utils")
+        local invoke_with_shell = utils.invoke_with_shell
+
+        vim.keymap.set(
+            { "n", "i", "v" },
+            "<C-p>",
+            invoke_with_shell("FzfLua files"),
+            { silent = true }
+        )
 
         -- vim.keymap.set({"n", "i", "v"}, "g"
-        vim.keymap.set({ "n", "i", "v" }, "<C-b>", fzf_wrapper("FzfLua buffers"), { silent = true })
+        vim.keymap.set(
+            { "n", "i", "v" },
+            "<C-b>",
+            invoke_with_shell("FzfLua buffers"),
+            { silent = true }
+        )
 
         vim.keymap.set(
             { "n", "i", "v" },
             "<C-f>",
-            fzf_wrapper("FzfLua live_grep"),
+            invoke_with_shell("FzfLua live_grep"),
+            { silent = true }
+        )
+
+        vim.keymap.set(
+            { "n", "i", "v" },
+            "<leader>sk",
+            invoke_with_shell("FzfLua keymaps"),
             { silent = true }
         )
 
         vim.keymap.set(
             { "n", "i", "v" },
             "<leader>of",
-            fzf_wrapper("FzfLua oldfiles"),
+            invoke_with_shell("FzfLua oldfiles"),
             { silent = true }
         )
     end,
