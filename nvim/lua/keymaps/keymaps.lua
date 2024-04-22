@@ -31,6 +31,5 @@ vim.keymap.set({"n", "i", "v"}, "<C-k>", "k", { noremap = true, silent = true })
 -- end, { expr = true })
 
 -- Terminal
---
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true })
-vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>")
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { noremap = true, silent = true})

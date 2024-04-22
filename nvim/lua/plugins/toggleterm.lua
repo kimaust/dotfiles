@@ -12,12 +12,12 @@ return {
             shade_terminals = false,
         })
 
-        vim.keymap.set({ "n", "i", "v", "t" }, "<C-t>", function()
+        vim.keymap.set({ "n", "i", "v", "t" }, "<C-\\>", function()
             if vim.fn.has("win32") or vim.fn.has("win64") then
                 vim.opt.shell = "cmd"
             end
             vim.cmd("ToggleTerm")
             vim.opt.shell = initial_shell
-        end)
+        end, { noremap = true, silent = true })
     end,
 }
