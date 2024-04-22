@@ -29,6 +29,19 @@ return {
             function(server_name)
                 lspconfig[server_name].setup({})
             end,
+            ["jsonls"] = function()
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+                lspconfig.jsonls.setup({
+                  capabilities = capabilities,
+                    filetypes = {
+                        "json",
+                        "jsonc",
+                        "prettierrc"
+                    }
+                })
+            end,
             ["lua_ls"] = function()
                 lspconfig.lua_ls.setup({
                     settings = {

@@ -72,6 +72,40 @@ return {
                 view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
             },
             routes = {
+              -- Disable written message
+              {
+                filter = {
+                  event = "msg_show",
+                  kind = "",
+                  find = "written",
+                },
+                opts = { skip = true },
+              },
+              -- Disable search message
+              {
+                filter = {
+                  event = "msg_show",
+                  kind = "wmsg",
+                  find = "search hit",
+                },
+                opts = { skip = true },
+              },
+              {
+                filter = {
+                  event = "msg_show",
+                  kind = "emsg",
+                  find = "Pattern not found",
+                },
+                opts = { skip = true },
+              }
+              -- {
+              --   filter = {
+              --     event = "msg_show",
+              --     kind = "",
+              --     find = "search hit",
+              --   },
+              --   opts = { skip = true },
+              -- },
                 -- {
                 -- 	filter = {
                 -- 		event = "msg_show",

@@ -4,6 +4,11 @@ return {
     config = function()
         local conform = require("conform")
         conform.setup({
+            -- formatter = {
+            --     prettierd = {
+            --
+            --     }
+            -- }
             formatters_by_ft = {
                 -- TODO: Use LSP lua formatter
                 lua = { "stylua" },
@@ -14,6 +19,7 @@ return {
                 javascriptreact = { "prettierd" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
+                -- pug = { "prettierd" },
             },
             -- Set up format on save
             format_on_save = function(bufnr)
