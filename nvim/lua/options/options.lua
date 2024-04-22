@@ -2,8 +2,6 @@
 vim.opt.timeout = false
 vim.opt.ttimeout = false
 
--- Fix for windows
-
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
 vim.opt.relativenumber = true

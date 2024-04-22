@@ -44,6 +44,8 @@ return {
 				"rust",
 				"scss",
 				"sql",
+                "tmux",
+                "toml",
 				"tsx",
 				"typescript",
 				"vim",

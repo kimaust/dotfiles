@@ -34,12 +34,12 @@ return {
                 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
                 lspconfig.jsonls.setup({
-                  capabilities = capabilities,
+                    capabilities = capabilities,
                     filetypes = {
                         "json",
                         "jsonc",
-                        "prettierrc"
-                    }
+                        "prettierrc",
+                    },
                 })
             end,
             ["lua_ls"] = function()
