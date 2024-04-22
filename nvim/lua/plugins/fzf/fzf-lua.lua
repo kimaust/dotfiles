@@ -99,6 +99,13 @@ return {
 
         vim.keymap.set(
             { "n", "i", "v" },
+            "<leader>sh",
+            invoke_with_shell("FzfLua helptags"),
+            { silent = true }
+        )
+
+        vim.keymap.set(
+            { "n", "i", "v" },
             "<leader>of",
             invoke_with_shell("FzfLua oldfiles"),
             { silent = true }
