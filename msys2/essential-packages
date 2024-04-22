@@ -1,3 +1,7 @@
+vim
+zsh
+tmux
+man-db
 $MINGW_PACKAGE_PREFIX-fzf
 $MINGW_PACKAGE_PREFIX-neovim
 $MINGW_PACKAGE_PREFIX-go
@@ -9,4 +13,3 @@ $MINGW_PACKAGE_PREFIX-man
 $MINGW_PACKAGE_PREFIX-python-pip
 $MINGW_PACKAGE_PREFIX-lua-luarocks
 $MINGW_PACKAGE_PREFIX-{gcc,cmake,make,ninja,diffutils}
-
