@@ -12,6 +12,7 @@ return {
             skip_confirm_for_simple_edits = true,
             keymaps = {
                 ["<C-p>"] = false,
+                ["<C-s>"] = false,
             },
             view_options = {
                 show_hidden = true,
