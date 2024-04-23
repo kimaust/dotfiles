@@ -207,8 +207,46 @@ n ()
 # Immersive
 source $HOME/immersive.zsh > /dev/null 2>&1
 
+alias git="C:/Program\ Files/Git/bin/git.exe"
 alias emerge="emerge --ask --verbose"
 
-# fzf on Windows
-alias fzf="echo $(cygpath -u $(fzf))"
+# fzf
+# FZF_DEFAULT_COMMAND="zsh"
+# Set up fzf key bindings and fuzzy completion
+export FZF_CTRL_T_COMMAND=""
+export FZF_ALT_C_COMMAND=""
+export FZF_DEFAULT_COMMAND="fd | cygpath -u -f -"
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1" | cygpath -u -f -
+}
 
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1" | cygpath -u -f -
+}
+eval "$(fzf --zsh)"
+# fzf on Windows
+# function fzf() {
+# 	cygpath -u $(command fzf)
+# }
+
+# Pip-related settings
+alias pip="python -m pip"
+# Since setuptools>=60.0.0 setuptools "includes a local, vendored copy of 
+# distutils". Therefore the MSYS2 patched version of standard libary distutils 
+# is not used unless you make it
+export SETUPTOOLS_USE_DISTUTILS=stdlib
+
+# 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# tmux
+#
+# TODO: 
+# script -c tmux /dev/null
+# script -c "tmux -u -T RGB" -qO /dev/null
+# tmux () {
+#     TMUX="command tmux ${@}"
+#     script -qO /dev/null -c "eval $TMUX";
+# }
