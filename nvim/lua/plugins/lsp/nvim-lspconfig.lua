@@ -39,14 +39,29 @@ return {
                 local invoke_with_shell = utils.invoke_with_shell
 
                 vim.keymap.set("n", "gd", invoke_with_shell("FzfLua lsp_definitions"), opts)
-                vim.keymap.set("n", "gD", invoke_with_shell("Fzflua lsp_declarations"), opts)
-                vim.keymap.set("n", "gt", invoke_with_shell("Fzflua lsp_typedefs"), opts)
-                vim.keymap.set("n", "gi", invoke_with_shell("Fzflua lsp_implementations"), opts)
-                vim.keymap.set("n", "<leader>lr", invoke_with_shell("Fzflua lsp_references"), opts)
-                vim.keymap.set("n", "<leader>lic", invoke_with_shell("Fzflua lsp_incoming_calls"), opts)
-                vim.keymap.set("n", "<leader>loc", invoke_with_shell("Fzflua lsp_outgoing_calls"), opts)
+                vim.keymap.set("n", "gD", invoke_with_shell("FzfLua lsp_declarations"), opts)
+                vim.keymap.set("n", "gt", invoke_with_shell("FzfLua lsp_typedefs"), opts)
+                vim.keymap.set("n", "gi", invoke_with_shell("FzfLua lsp_implementations"), opts)
+                vim.keymap.set("n", "<leader>lr", invoke_with_shell("FzfLua lsp_references"), opts)
+                vim.keymap.set(
+                    "n",
+                    "<leader>lic",
+                    invoke_with_shell("FzfLua lsp_incoming_calls"),
+                    opts
+                )
+                vim.keymap.set(
+                    "n",
+                    "<leader>loc",
+                    invoke_with_shell("FzfLua lsp_outgoing_calls"),
+                    opts
+                )
 
-                vim.keymap.set({ "n", "v" }, "<leader>ca", invoke_with_shell("Fzflua lsp_code_actions"), opts)
+                vim.keymap.set(
+                    { "n", "v" },
+                    "<leader>ca",
+                    invoke_with_shell("Fzflua lsp_code_actions"),
+                    opts
+                )
 
                 -- vim.keymap.set("n", "<leader>ls", telescope_builtin.lsp_document_symbols, opts)
                 vim.keymap.set("n", "<leader>re", vim.lsp.buf.rename, opts)
