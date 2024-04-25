@@ -60,8 +60,9 @@ return {
                 end, { "i", "s", "c" }),
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-c>"] = cmp.mapping.abort(),
+                ["<C-c>"] = cmp.mapping.complete(),
+                ["<C-a>"] = cmp.mapping.abort(),
+                -- ["<C-a>"] = ,
                 -- Accept currently selected item. Set `select` to `false` to
                 -- only confirm explicitly selected items.
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),

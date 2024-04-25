@@ -23,6 +23,8 @@ vim.keymap.set({ "n", "v" }, "<C-.>", "2<C-w>>", { noremap = true, silent = true
 
 -- vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
+-- vim.keymap.set()
+-- vim.keymap.set({ "n", "i", "v" }, "<C-c>", "<C-x><C-o>", { noremap = true, silent = true })
 
 -- Scrolling
 --

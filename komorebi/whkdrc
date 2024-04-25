@@ -51,13 +51,13 @@ alt + space             : komorebic toggle-monocle
 alt + shift + space     : komorebic toggle-float
 
 # Window manager options
-alt + shift + r         : komorebic retile
+# alt + shift + r         : komorebic retile
 
 alt + p                 : komorebic toggle-pause
 
 # Layout
-alt + v                 : komorebic flip-layout horizontal
-alt + s                 : komorebic flip-layout vertical
+# alt + v                 : komorebic flip-layout horizontal
+# alt + s                 : komorebic flip-layout vertical
 
 # Workspaces
 alt + 1                 : komorebic focus-workspace 0
