@@ -12,7 +12,7 @@ return {
             shade_terminals = false,
         })
 
-        vim.keymap.set({ "n", "i", "v", "t" }, "<C-\\>", function()
+        vim.keymap.set({ "n", "i", "v", "t" }, "<C-t>", function()
             if vim.fn.has("win32") or vim.fn.has("win64") then
                 vim.opt.shell = "cmd"
             end

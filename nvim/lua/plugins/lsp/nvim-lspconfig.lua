@@ -66,8 +66,8 @@ return {
                 -- vim.keymap.set("n", "<leader>ls", telescope_builtin.lsp_document_symbols, opts)
                 vim.keymap.set("n", "<leader>re", vim.lsp.buf.rename, opts)
 
-                vim.keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts)
-                vim.keymap.set({ "n", "i" }, "<C-S-h>", vim.lsp.buf.signature_help, opts)
+                vim.keymap.set({ "n", "i" }, "<M-h>", vim.lsp.buf.hover, opts)
+                vim.keymap.set({ "n", "i" }, "<M-S-h>", vim.lsp.buf.signature_help, opts)
 
                 -- vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
                 -- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
