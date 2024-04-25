@@ -21,10 +21,13 @@ return {
         local actions = require("fzf-lua.actions")
         fzf_lua.setup({
             winopts = {
+                width = 0.90,
+                height = 0.95,
                 preview = {
                     -- Defualt bat highlighting looks garbage, so use the builtin
                     -- until I can figure out how to override theme.
                     default = "builtin",
+                    layout = "vertical",
                 },
             },
             manpages = {

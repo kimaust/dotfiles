@@ -15,6 +15,7 @@ return {
                 -- use VSCode instead for now.
                 -- "omnisharp",
                 -- "rust_analyzer",
+                "glint",
                 "vimls",
                 "bashls",
                 "awk_ls",

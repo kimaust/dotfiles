@@ -14,21 +14,21 @@ alt + shift + o         : komorebic reload-configuration
 alt + shift + return    : start 'C:/Program Files\Alacritty\alacritty.exe' --config-file='C:\msys64\home\k\dotfiles\alacritty\alacritty.toml'
 
 # Focus windows
-alt + h                 : komorebic focus left
-alt + j                 : komorebic focus down
-alt + k                 : komorebic focus up
-alt + l                 : komorebic focus right
+# alt + h                 : komorebic focus left
+# alt + j                 : komorebic focus down
+# alt + k                 : komorebic focus up
+# alt + l                 : komorebic focus right
 # alt + shift + oem_4     : komorebic cycle-focus previous # oem_4 is [
 # alt + shift + oem_6     : komorebic cycle-focus next # oem_6 is ]
 
 # Custom
 alt + shift + q         : komorebic close
 
-# Move windows
-alt + shift + h         : komorebic move left
-alt + shift + j         : komorebic move down
-alt + shift + k         : komorebic move up
-alt + shift + l         : komorebic move right
+# # Move windows
+# alt + shift + h         : komorebic move left
+# alt + shift + j         : komorebic move down
+# alt + shift + k         : komorebic move up
+# alt + shift + l         : komorebic move right
 # alt + shift + return    : komorebic promote
 
 # Stack windows
@@ -41,10 +41,10 @@ alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
 alt + oem_6             : komorebic cycle-stack next # oem_6 is ]
 
 # Resize
-alt + oem_plus          : komorebic resize-axis horizontal increase
-alt + oem_minus         : komorebic resize-axis horizontal decrease
-alt + shift + oem_plus  : komorebic resize-axis vertical increase
-alt + shift + oem_minus : komorebic resize-axis vertical decrease
+# alt + oem_plus          : komorebic resize-axis horizontal increase
+# alt + oem_minus         : komorebic resize-axis horizontal decrease
+# alt + shift + oem_plus  : komorebic resize-axis vertical increase
+# alt + shift + oem_minus : komorebic resize-axis vertical decrease
 
 # Manipulate windows
 alt + space             : komorebic toggle-monocle

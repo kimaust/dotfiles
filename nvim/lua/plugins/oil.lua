@@ -9,7 +9,7 @@ return {
         local actions = require("oil.actions")
         local utils = require("utils")
         oil.setup({
-            skip_confirm_for_simple_edits = true,
+            -- skip_confirm_for_simple_edits = true,
             keymaps = {
                 ["<C-p>"] = false,
                 ["<C-s>"] = false,

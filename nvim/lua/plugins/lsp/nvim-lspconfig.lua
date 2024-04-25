@@ -14,6 +14,9 @@ return {
             },
         })
 
+        local utils = require("utils")
+        local invoke_with_shell = utils.invoke_with_shell
+
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         vim.keymap.set("n", "<leader>oid", vim.diagnostic.open_float)
@@ -22,6 +25,7 @@ return {
         vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>sd", "<Cmd>Telescope diagnostics bufnr=0<CR>", {})
         -- vim.keymap.set("n", "<leader>sD", telescope_builtin.diagnostics, {})
+        vim.keymap.set({ "n", "i", "v" }, "<M-j>", invoke_with_shell("FzfLua jumps"), {})
 
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
@@ -34,9 +38,6 @@ return {
                 -- Buffer local mappings.
                 -- See `:help vim.lsp.*` for documentation on any of the below functions
                 local opts = { buffer = ev.buf }
-
-                local utils = require("utils")
-                local invoke_with_shell = utils.invoke_with_shell
 
                 vim.keymap.set("n", "gd", invoke_with_shell("FzfLua lsp_definitions"), opts)
                 vim.keymap.set("n", "gD", invoke_with_shell("FzfLua lsp_declarations"), opts)
@@ -59,7 +60,7 @@ return {
                 vim.keymap.set(
                     { "n", "v" },
                     "<leader>ca",
-                    invoke_with_shell("Fzflua lsp_code_actions"),
+                    invoke_with_shell("FzfLua lsp_code_actions"),
                     opts
                 )
 

@@ -32,6 +32,52 @@ args = ["-defterm", "-no-start", "-use-full-path", "-clang64", "-here", "-shell"
 # key = "Return"
 # mods = "Shift"
 
+# [keyboard]
+# bindings = [
+#     { key= "Minus", mods = "Alt", chars = "\\x1b_"                       },
+# ]
+
+# [[keyboard.bindings]]
+# chars = "\u001B[43;3u"
+# key = "Plus"
+# mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[104;3u"
+key = "h"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[72;4u"
+key = "H"
+mods = "Alt|Shift"
+
+# TODO: Figure out way to bind to alt key.
+[[keyboard.bindings]]
+chars = "\u001B[61;5u"
+key = "="
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[45;5u"
+key = "-"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[44;5u"
+key = ","
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[46;5u"
+key = "."
+mods = "Control"
+
+# [[keyboard.bindings]]
+# chars = "\\x1b-"
+# key = "Minus"
+# mods = "Alt"
+
 [[keyboard.bindings]]
 chars = "\u001B[13;5u"
 key = "Return"
@@ -71,6 +117,7 @@ mods = "Control|Shift"
 chars = "\u001B[76;5u"
 key = "L"
 mods = "Control|Shift"
+
 
 # TokyoNight Alacritty Colors
 # Default colors

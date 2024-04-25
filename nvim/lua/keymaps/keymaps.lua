@@ -10,8 +10,16 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Cmd>w<CR>", { noremap = true, silen
 vim.keymap.set({ "i" }, "<C-x>", "<BS>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<C-x>", "xh", { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "i", "v" }, "<C-z>", "u", { noremap = true, silent = true })
-vim.keymap.set("n", "u", "<Nop>", { noremap = true, silent = true })
+-- TODO: Figure out why this isn't working
+vim.keymap.set({ "i" }, "<C-z>", "<Esc>ua", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-z>", "u", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "u", "<Nop>", { noremap = true, silent = true })
+-- vim.keymap.set({ "n", "v" }, "<CR>", "<Nop>", { noremap = true, silent = true })
+
+vim.keymap.set({ "n", "v" }, "<C-=>", "2<C-w>+", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C--->", "2<C-w>-", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-,>", "2<C-w><", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-.>", "2<C-w>>", { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>E", "<Cmd>Ex<CR>", { noremap = true, silent = true })
