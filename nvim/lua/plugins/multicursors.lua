@@ -11,7 +11,7 @@ return {
         local multicursors = require("multicursors")
         multicursors.setup({})
 
-        vim.keymap.set({ "v", "n" }, "<C-m>", "<Cmd>MCstart<CR>", {
+        vim.keymap.set({ "v", "n" }, "<M-m>", "<Cmd>MCstart<CR>", {
             noremap = true,
             desc = "Create a selection for selected text or word under the cursor",
         })

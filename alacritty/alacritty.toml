@@ -73,11 +73,6 @@ chars = "\u001B[46;5u"
 key = "."
 mods = "Control"
 
-# [[keyboard.bindings]]
-# chars = "\\x1b-"
-# key = "Minus"
-# mods = "Alt"
-
 [[keyboard.bindings]]
 chars = "\u001B[13;5u"
 key = "Return"
@@ -118,6 +113,15 @@ chars = "\u001B[76;5u"
 key = "L"
 mods = "Control|Shift"
 
+[[keyboard.bindings]]
+chars = "\u001B[70;5u"
+key = "F"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[81;5u"
+key = "Q"
+mods = "Control|Shift"
 
 # TokyoNight Alacritty Colors
 # Default colors

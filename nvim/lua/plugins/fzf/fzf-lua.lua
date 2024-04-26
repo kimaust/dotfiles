@@ -22,7 +22,7 @@ return {
         fzf_lua.setup({
             winopts = {
                 width = 0.90,
-                height = 0.95,
+                height = 0.90,
                 preview = {
                     -- Defualt bat highlighting looks garbage, so use the builtin
                     -- until I can figure out how to override theme.
@@ -89,7 +89,14 @@ return {
         vim.keymap.set(
             { "n", "i", "v" },
             "<C-f>",
-            invoke_with_shell("FzfLua live_grep"),
+            invoke_with_shell("FzfLua live_grep_native"),
+            { silent = true }
+        )
+
+        vim.keymap.set(
+            { "n", "i", "v" },
+            "<C-S-f>",
+            invoke_with_shell("FzfLua grep"),
             { silent = true }
         )
 
@@ -111,6 +118,26 @@ return {
             { "n", "i", "v" },
             "<leader>of",
             invoke_with_shell("FzfLua oldfiles"),
+            { silent = true }
+        )
+
+        local dir_switcher = function(opts)
+            opts = opts or {}
+            opts.prompt = "Directories> "
+            opts.fn_transform = function(x)
+                return fzf_lua.utils.ansi_codes.magenta(x)
+            end
+            opts.actions = {
+                ["default"] = function(selected)
+                    vim.cmd("cd " .. selected[1])
+                end,
+            }
+            fzf_lua.fzf_exec("fd -H --type d", opts)
+        end
+        vim.keymap.set(
+            { "n", "v" },
+            "<leader>cd",
+            invoke_with_shell(dir_switcher),
             { silent = true }
         )
     end,

@@ -69,6 +69,7 @@ return {
                         "sass",
                         "scss",
                         "pug",
+                        "handlebars",
                         "typescriptreact",
                     },
                 })
