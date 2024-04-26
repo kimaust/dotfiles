@@ -16,6 +16,7 @@ return {
                 typescriptreact = { "prettierd" },
                 pug = { "prettierd" },
                 handlebars = { "prettierd" },
+                ejs = { "prettierd" },
             },
             -- Set up format on save
             format_on_save = function(bufnr)

@@ -101,21 +101,21 @@ return {
         )
 
         vim.keymap.set(
-            { "n", "i", "v" },
+            { "n", "v" },
             "<leader>sk",
             invoke_with_shell("FzfLua keymaps"),
             { silent = true }
         )
 
         vim.keymap.set(
-            { "n", "i", "v" },
+            { "n", "v" },
             "<leader>sh",
             invoke_with_shell("FzfLua helptags"),
             { silent = true }
         )
 
         vim.keymap.set(
-            { "n", "i", "v" },
+            { "n", "v" },
             "<leader>of",
             invoke_with_shell("FzfLua oldfiles"),
             { silent = true }

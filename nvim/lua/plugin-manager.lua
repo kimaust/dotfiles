@@ -20,6 +20,9 @@ lazy.setup({
         import = "plugins.fzf",
     },
     {
+        import = "plugins.telescope",
+    },
+    {
         import = "plugins.lsp",
     },
     {
@@ -39,8 +42,6 @@ lazy.setup({
     "folke/which-key.nvim",
     { "folke/neoconf.nvim" },
     -- require("plugins.nvim-dap"),
-    --    require("plugins.lualine"),
-    --"airblade/vim-gitgutter",
     --"RRethy/vim-illuminate",
 })
 

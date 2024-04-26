@@ -82,5 +82,25 @@ return {
             },
             filetype = "ejs",
         }
+
+        local abc = function()
+            print("abc")
+        end
+        abc()
+
+        local pallete = require("nightfox.palette").load("dayfox")
+        local color = require("nightfox.lib.color")
+
+        local testcolor = color.from_hex(pallete.black.base)
+        -- vim.api.nvim_set_hl(0, "@ex", {link = "Identifier"})
+        vim.api.nvim_set_hl(0, "@lsp.type.function", {
+            fg = pallete.blue.dim,
+        })
+        vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly", {
+            -- bold = true,
+            italic = true,
+            -- fg = color.from_hex(pallete.orange.base):to_hex(),
+        })
+        -- vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = pallete.pink.base })
     end,
 }
