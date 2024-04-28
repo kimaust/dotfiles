@@ -94,7 +94,14 @@ return {
         local testcolor = color.from_hex(pallete.black.base)
         -- vim.api.nvim_set_hl(0, "@ex", {link = "Identifier"})
         vim.api.nvim_set_hl(0, "@lsp.type.function", {
-            fg = pallete.blue.dim,
+            fg = pallete.orange.base,
+        })
+        -- vim.api.nivm_set_hl(0, "@variable.member", {
+        --     fg = pallete.blue.base,
+        -- })
+        -- TODO: Fix priority
+        vim.api.nvim_set_hl(0, "@function.method.call", {
+            fg = pallete.blue.base,
         })
         vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly", {
             -- bold = true,
