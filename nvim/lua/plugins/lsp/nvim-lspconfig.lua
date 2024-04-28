@@ -17,7 +17,7 @@ return {
         local utils = require("utils")
         local invoke_with_shell = utils.invoke_with_shell
 
-        vim.keymap.set({ "n", "i" }, "<M-h>", vim.lsp.buf.hover, {})
+        -- vim.keymap.set({ "n", "i" }, "<M-h>", vim.lsp.buf.hover, {})
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         -- vim.keymap.set("n", "<leader>sd", "<Cmd>Telescope diagnostics bufnr=0<CR>", {})
