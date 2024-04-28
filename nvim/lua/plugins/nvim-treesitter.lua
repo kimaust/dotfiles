@@ -102,5 +102,8 @@ return {
             -- fg = color.from_hex(pallete.orange.base):to_hex(),
         })
         -- vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = pallete.pink.base })
+        vim.api.nvim_set_hl(0, "@lsp.typemod.property.declaration", {
+            fg = pallete.pink.base,
+        })
     end,
 }

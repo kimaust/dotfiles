@@ -56,7 +56,8 @@ return {
                 vim.keymap.set(
                     { "n", "v" },
                     "<M-a>",
-                    invoke_with_shell("FzfLua lsp_code_actions"),
+                    vim.lsp.buf.code_action,
+                    -- invoke_with_shell("FzfLua lsp_code_actions"),
                     opts
                 )
                 vim.keymap.set({ "n", "i", "v" }, "<M-j>", invoke_with_shell("FzfLua jumps"), opts)

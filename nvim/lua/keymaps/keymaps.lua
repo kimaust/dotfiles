@@ -4,9 +4,17 @@ vim.keymap.set({ "i" }, "<C-x>", "<BS>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<C-x>", "xh", { noremap = true, silent = true })
 
 -- TODO: Figure out why this isn't working
-vim.keymap.set({ "i" }, "<C-z>", "<Esc>ua", { noremap = true, silent = true })
+-- vim.keymap.set({ "i" }, "<C-z>", "<Esc>ua", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "<C-z>", "u", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "u", "<Nop>", { noremap = true, silent = true })
+-- inoremap <expr> <silent> <cr> pumvisible() ? "<c-y>" : "<c-g>u<cr>"
+-- vim.keymap.set({ "i" }, "<C-r>", function()
+--     vim.cmd("redo")
+-- end, { noremap = true, silent = true })
+
+-- FIXME: Doesn't work for some reason
+-- vim.keymap.set("i", "<CR>", "<C-G>u<CR>", { noremap = true, silent = true })
+
 -- vim.keymap.set({ "n", "v" }, "<CR>", "<Nop>", { noremap = true, silent = true })
 
 -- Scrolling

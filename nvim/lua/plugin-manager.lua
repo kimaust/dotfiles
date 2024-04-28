@@ -42,7 +42,6 @@ lazy.setup({
     "folke/which-key.nvim",
     { "folke/neoconf.nvim" },
     -- require("plugins.nvim-dap"),
-    --"RRethy/vim-illuminate",
 })
 
 lazy.stats({
