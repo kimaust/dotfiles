@@ -10,44 +10,30 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
+-- , {
+--     require("plugins.indent-blankline"),
+-- }
+--
 local lazy = require("lazy")
 lazy.setup({
-    {
-        import = "plugins",
-    },
-    {
-        import = "plugins.fzf",
-    },
-    {
-        import = "plugins.telescope",
-    },
-    {
-        import = "plugins.lsp",
-    },
-    {
-        import = "plugins.ui",
-    },
-    {
-        import = "plugins.local",
-    },
+    { import = "plugins" },
+    { import = "plugins.colortheme" },
+    { import = "plugins.completion" },
+    { import = "plugins.copilot" },
+    { import = "plugins.dap" },
+    { import = "plugins.formatter" },
+    { import = "plugins.fzf" },
+    { import = "plugins.lint" },
+    { import = "plugins.lsp" },
+    { import = "plugins.scroll" },
+    { import = "plugins.telescope" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.ui" },
+    { import = "plugins.local" },
 }, {
     change_detection = {
-        -- automatically check for config file changes and reload the ui
+        -- Automatically check for config file changes and reload the ui.
         enable = false,
         notify = false,
     },
-}, {
-    require("plugins.indent-blankline"),
-    "folke/which-key.nvim",
-    { "folke/neoconf.nvim" },
-    -- require("plugins.nvim-dap"),
-})
-
-lazy.stats({
-    -- when true, startuptime is the accurate cputime for the Neovim process.
-    -- (Linux & Macos)
-    -- this is more accurate than `nvim --startuptime`, and as such will be slightly higher
-    -- when false, startuptime is calculated based on a delta with a timestamp when lazy started.
-    real_cputime = true,
 })

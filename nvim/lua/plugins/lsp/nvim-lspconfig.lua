@@ -2,10 +2,12 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         { "folke/neodev.nvim", lazy = false },
+        { "folke/neoconf.nvim", lazy = false },
     },
     config = function()
         -- Set up neodev before LSP config.
         require("neodev").setup({})
+        require("neoconf").setup({})
 
         -- Show source for the diagnostics.
         vim.diagnostic.config({

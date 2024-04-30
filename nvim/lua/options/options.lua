@@ -2,6 +2,11 @@
 vim.opt.timeout = false
 vim.opt.ttimeout = false
 
+-- Fix for Windows
+if vim.fn.has("win32") or vim.fn.has("win64") then
+    vim.opt.shell = "cmd"
+end
+
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -54,20 +59,12 @@ vim.opt.wildmenu = true
 
 -- Keep large history
 vim.opt.history = 1000
--- Create backup, will create another file with ~suffix default.
--- vim.opt.backup = true
--- Set backup extension.
--- vim.opt.bex = extension
 
 -- Wrap around break instead of mid-word
 -- vim.opt.lbr = true
 
--- Enable wrapping
-vim.opt.wrap = true
 -- Wrap around 100 characters.
-vim.opt.textwidth = 100
--- Make wrapped line continue visually wrapped.
---vim.opt.breakindent = true
+-- vim.opt.textwidth = 100
 -- Turn off list mode.
 --vim.opt.list = false
 

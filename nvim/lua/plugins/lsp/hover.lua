@@ -26,7 +26,7 @@ return {
             mouse_delay = 1000,
         })
         -- Setup keymaps
-        vim.keymap.set({ "n", "i" }, "<M-h>", require("hover").hover, { desc = "hover.nvim" })
+        vim.keymap.set({ "n", "i" }, "<M-h>", hover.hover, { desc = "hover.nvim" })
         -- vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
         vim.keymap.set("n", "<M-,>", function()
             hover.hover_switch("previous")

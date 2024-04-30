@@ -1,7 +1,8 @@
 return {
     "zbirenbaum/copilot.lua",
     config = function()
-        require("copilot").setup({
+        local copilot = require("copilot")
+        copilot.setup({
             panel = {
                 enabled = true,
                 -- Automatically refresh the panel when the file changes.
@@ -21,7 +22,7 @@ return {
                 enabled = true,
                 -- Suggest after entering insert mode.
                 auto_trigger = true,
-                debounce = 75,
+                debounce = 100,
                 keymap = {
                     accept = "<C-CR>",
                     accept_word = "<S-Tab>",
@@ -46,13 +47,13 @@ return {
             "n",
             "<leader>op",
             "<cmd>Copilot panel<CR>",
-            { noremap = true, silent = true }
+            { noremap = true, silent = true, desc = "Open copilot panel." }
         )
         vim.keymap.set(
             "n",
-            "<leader>ct",
+            "<leader>tc",
             "<cmd>Copilot toggle<CR>",
-            { noremap = true, silent = true }
+            { noremap = true, silent = true, desc = "Toggle copilot." }
         )
     end,
 }

@@ -30,23 +30,6 @@ return {
                     layout = "vertical",
                 },
             },
-            manpages = {
-                previewer = "man_native",
-            },
-            helptags = {
-                previewer = "help_native",
-            },
-            lsp = {
-                code_actions = {
-                    previewer = "codeaction_native",
-                },
-            },
-            tags = {
-                previewer = "bat",
-            },
-            btags = {
-                previewer = "bat",
-            },
             files = {
                 previewer = false,
                 fzf_opts = {

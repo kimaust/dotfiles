@@ -12,7 +12,6 @@ function M.invoke_with_shell(command, default_shell, cond)
         if type(command) == "string" then
             vim.cmd(command)
         else
-            print("test")
             command()
         end
         vim.opt.shell = initial_shell

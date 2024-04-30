@@ -5,6 +5,7 @@ local initial_scrolloff = 0
 
 return {
     "karb94/neoscroll.nvim",
+    enabled = false,
     config = function()
         require("neoscroll").setup({
             mappings = { "<C-u>", "<C-d>" },
