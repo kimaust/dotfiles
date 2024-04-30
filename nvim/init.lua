@@ -1,9 +1,12 @@
 require("globals.globals")
 require("globals.globals-nvim-tree")
 require("options.options")
-require("options.options-colortheme")
-require("options.options-indentation")
-require("options.options-wrapping")
+require("options.colortheme")
+require("options.indentation")
+require("options.wrapping")
+if vim.fn.has("win32") or vim.fn.has("win64") then
+    require("options.msys")
+end
 require("keymaps.keymaps")
 require("keymaps.keymaps-buffers")
 require("keymaps.keymaps-movements")

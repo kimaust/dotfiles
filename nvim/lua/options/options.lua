@@ -2,10 +2,7 @@
 vim.opt.timeout = false
 vim.opt.ttimeout = false
 
--- Fix for Windows
-if vim.fn.has("win32") or vim.fn.has("win64") then
-    vim.opt.shell = "cmd"
-end
+--Fix for Windows
 
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true

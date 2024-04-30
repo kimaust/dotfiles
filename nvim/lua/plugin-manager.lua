@@ -10,10 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
--- , {
---     require("plugins.indent-blankline"),
--- }
---
+
 local lazy = require("lazy")
 lazy.setup({
     { import = "plugins" },

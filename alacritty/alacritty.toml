@@ -79,6 +79,12 @@ key = "Return"
 mods = "Control"
 
 [[keyboard.bindings]]
+chars = "\u0000"
+key = "Space"
+mods = "Control"
+# chars = "\u001B[32;5u"
+
+[[keyboard.bindings]]
 chars = "\u001B[9;5u"
 key = "Tab"
 mods = "Control"
@@ -94,32 +100,32 @@ key = "Slash"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u001B[72;5u"
+chars = "\u001B[72;6u"
 key = "H"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001B[74;5u"
+chars = "\u001B[74;6u"
 key = "J"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001B[75;5u"
+chars = "\u001B[75;6u"
 key = "K"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001B[76;5u"
+chars = "\u001B[76;6u"
 key = "L"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001B[70;5u"
+chars = "\u001B[70;6u"
 key = "F"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001B[81;5u"
+chars = "\u001B[81;6u"
 key = "Q"
 mods = "Control|Shift"
 

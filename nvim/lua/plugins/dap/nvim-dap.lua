@@ -1,6 +1,6 @@
 return {
-	"mfussenegger/nvim-dap",
-	config = function()
-		vim.cmd("helptags ALL")
-	end,
+    "mfussenegger/nvim-dap",
+    config = function()
+        -- vim.cmd("helptags ALL")
+    end,
 }

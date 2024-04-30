@@ -1,6 +1,7 @@
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
+    enabled = false,
     config = function()
         -- TODO: Put this into a separate file.
         -- Workaround for MSYS2. Currently, fzf only supports cmd shell on
