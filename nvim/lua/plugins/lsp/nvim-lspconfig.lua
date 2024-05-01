@@ -6,7 +6,14 @@ return {
     },
     config = function()
         -- Set up neodev before LSP config.
-        require("neodev").setup({})
+        require("neodev").setup({
+            library = {
+                plugins = {
+                    "nvim-dap-ui",
+                },
+                types = true,
+            },
+        })
         require("neoconf").setup({})
 
         -- Show source for the diagnostics.

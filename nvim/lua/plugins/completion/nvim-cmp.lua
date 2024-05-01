@@ -28,8 +28,8 @@ return {
 
         cmp.setup({
             performance = {
-                debounce = 100,
-                throttle = 100,
+                -- debounce = 100,
+                -- throttle = 100,
             },
             snippet = {
                 expand = function(args)
