@@ -3,12 +3,18 @@ return {
     config = function()
         local lsp_signature = require("lsp_signature")
         lsp_signature.setup({
+            wrap = true,
+            max_height = 100,
+            max_width = 100,
             handler_opts = {
                 border = "rounded",
             },
+            hint_enable = true,
+            hint_prefix = " ",
+            hint_inline = function()
+                return false
+            end,
+            toggle_key = "<M-x>",
         })
-        vim.keymap.set({ "n", "i" }, "<M-S-h>", function()
-            lsp_signature.toggle_float_win()
-        end, { silent = true, noremap = true, desc = "toggle signature" })
     end,
 }

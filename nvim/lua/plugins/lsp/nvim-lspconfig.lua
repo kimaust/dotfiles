@@ -3,6 +3,7 @@ return {
     dependencies = {
         { "folke/neodev.nvim", lazy = false },
         { "folke/neoconf.nvim", lazy = false },
+        { "ray-x/lsp_signature.nvim", lazy = false },
     },
     config = function()
         -- Set up neodev before LSP config.
@@ -44,7 +45,29 @@ return {
 
                 -- Enable lsp signature helper.
                 if client and client.server_capabilities.signatureHelpProvider then
-                    require("lsp-overloads").setup(client, {})
+                    require("lsp-overloads").setup(client, {
+                        ui = {
+                            border = "rounded",
+                            height = nil,
+                            max_height = 30,
+                            width = nil,
+                            max_width = 100,
+                            offset_y = 0,
+                            close_events = {
+                                "BufHidden",
+                                "InsertLeave",
+                            },
+                            -- For debugging set to false
+                            silent = true,
+                        },
+                        display_automatically = false,
+                    })
+                    vim.keymap.set(
+                        { "i", "n", "v" },
+                        "<M-s>",
+                        "<cmd>LspOverloadsSignature<CR>",
+                        opts
+                    )
                 end
 
                 -- Buffer local mappings.
@@ -55,7 +78,6 @@ return {
                 vim.keymap.set("n", "gr", invoke_with_shell("FzfLua lsp_references"), opts)
                 vim.keymap.set("n", "<M-i>", invoke_with_shell("FzfLua lsp_incoming_calls"), opts)
                 vim.keymap.set("n", "<M-o>", invoke_with_shell("FzfLua lsp_outgoing_calls"), opts)
-                vim.keymap.set("i", "<M-s>", "<cmd>LspOverloadsSignature<CR>", opts)
                 -- vim.keymap.set(
                 --     { "n", "i", "v" },
                 --     "<M-d>",
