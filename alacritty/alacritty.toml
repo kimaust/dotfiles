@@ -47,6 +47,11 @@ chars = "\u001B[104;3u"
 key = "h"
 mods = "Alt"
 
+# [[keyboard.bindings]]
+# chars = "\u001B[104;3u"
+# key = "s"
+# mods = "Alt"
+
 [[keyboard.bindings]]
 chars = "\u001B[72;4u"
 key = "H"

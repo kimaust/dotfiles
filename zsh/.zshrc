@@ -245,8 +245,10 @@ export LANG=en_US.UTF-8
 #
 # TODO: 
 # script -c tmux /dev/null
-# script -c "tmux -u -T RGB" -qO /dev/null
+alias tmux_start="script -c 'tmux -u -T RGB' -qO /dev/null"
 # tmux () {
 #     TMUX="command tmux ${@}"
 #     script -qO /dev/null -c "eval $TMUX";
 # }
+#
+# test

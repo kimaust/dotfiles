@@ -26,23 +26,28 @@ return {
         local utils = require("utils")
         local invoke_with_shell = utils.invoke_with_shell
 
-        -- vim.keymap.set({ "n", "i" }, "<M-h>", vim.lsp.buf.hover, {})
-        -- Global mappings.
-        -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-        -- vim.keymap.set("n", "<leader>sd", "<Cmd>Telescope diagnostics bufnr=0<CR>", {})
-
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(ev)
+                local client = vim.lsp.get_client_by_id(ev.data.client_id)
+                local opts = {
+                    noremap = true,
+                    silent = true,
+                    buffer = ev.buf,
+                }
                 -- Enable completion triggered by <c-x><c-o>
-                vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+                if client and client.server_capabilities.completionProvider then
+                    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+                end
+
+                -- Enable lsp signature helper.
+                if client and client.server_capabilities.signatureHelpProvider then
+                    require("lsp-overloads").setup(client, {})
+                end
 
                 -- Buffer local mappings.
-                -- See `:help vim.lsp.*` for documentation on any of the below functions
-                local opts = { buffer = ev.buf }
-
                 vim.keymap.set("n", "gd", invoke_with_shell("FzfLua lsp_definitions"), opts)
                 vim.keymap.set("n", "gD", invoke_with_shell("FzfLua lsp_declarations"), opts)
                 vim.keymap.set("n", "gt", invoke_with_shell("FzfLua lsp_typedefs"), opts)
@@ -50,6 +55,7 @@ return {
                 vim.keymap.set("n", "gr", invoke_with_shell("FzfLua lsp_references"), opts)
                 vim.keymap.set("n", "<M-i>", invoke_with_shell("FzfLua lsp_incoming_calls"), opts)
                 vim.keymap.set("n", "<M-o>", invoke_with_shell("FzfLua lsp_outgoing_calls"), opts)
+                vim.keymap.set("i", "<M-s>", "<cmd>LspOverloadsSignature<CR>", opts)
                 -- vim.keymap.set(
                 --     { "n", "i", "v" },
                 --     "<M-d>",
