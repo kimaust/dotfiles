@@ -49,7 +49,7 @@ return {
                         ui = {
                             border = "rounded",
                             height = nil,
-                            max_height = 30,
+                            max_height = nil,
                             width = nil,
                             max_width = 100,
                             offset_y = 0,
