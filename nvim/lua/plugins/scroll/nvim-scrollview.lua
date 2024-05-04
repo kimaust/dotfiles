@@ -3,6 +3,10 @@ return {
     config = function()
         local scrollview = require("scrollview")
         scrollview.setup({
+            auto_mouse = false,
+            hover = false,
+            win_blend = 0,
+            mode = "simple",
             excluded_filetypes = { "nerdtree" },
             current_only = true,
             base = "right",

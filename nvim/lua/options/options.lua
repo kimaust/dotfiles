@@ -15,7 +15,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Keep the cursor in the center when scrolling
-vim.opt.scrolloff = 3
+vim.opt.scrolloff = 999
 
 -- Enable cursor go past area with no characters for block mode.
 -- Useful for visual block mode.

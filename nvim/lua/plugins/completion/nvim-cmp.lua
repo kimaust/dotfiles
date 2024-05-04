@@ -3,6 +3,9 @@ return {
     dependencies = {
         -- Completion source for neovim's built-in language server client.
         { "hrsh7th/cmp-nvim-lsp", lazy = false },
+        { "hrsh7th/cmp-nvim-lsp-signature-help", lazy = false },
+        { "hrsh7th/cmp-nvim-lsp-document-symbol", lazy = false },
+        { "JMarkin/cmp-diag-codes", lazy = false },
         -- Completion source for recommending text within the buffer.
         { "hrsh7th/cmp-buffer", lazy = false },
         -- Completion source for file system path
@@ -42,8 +45,6 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
-                -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-                -- ["<C-j>"] = cmp.mapping.select_next_item(),
                 ["<C-j>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
@@ -72,51 +73,47 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             }),
             sources = cmp.config.sources({
-                { name = "nvim_lsp" },
+                { name = "nvim_lsp", priority = 100 },
+                { name = "nvim_lsp_signature_help", priority = 99 },
                 { name = "luasnip" },
+                {
+                    name = "diag-codes",
+                    -- default completion available only in comment context
+                    -- use false if you want to get in other context
+                    option = { in_comment = true },
+                },
+                { name = "copilot", priority = 0 },
             }, {
-                { name = "buffer" },
                 { name = "path" },
+                -- { name = "buffer" },
             }),
+            sorting = {
+                priority_weight = 1.0,
+                comparators = {
+                    cmp.config.compare.exact,
+                    cmp.config.compare.offset,
+                    cmp.config.compare.score,
+                    cmp.config.compare.recently_used,
+                    cmp.config.compare.locality,
+                    cmp.config.compare.kind,
+                    cmp.config.compare.sort_text,
+                    cmp.config.compare.length,
+                    cmp.config.compare.order,
+                    -- require("copilot_cmp.comparators").prioritize,
+                },
+            },
         })
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ "/", "?" }, {
-            -- mapping = cmp.mapping.preset.cmdline(),
-            -- mapping = cmp.mapping.preset.insert({
-            -- 	["<C-k>"] = cmp.mapping.select_prev_item(),
-            -- 	["<C-j>"] = cmp.mapping.select_next_item(),
-            -- 	-- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-            -- 	-- ["<C-d>"] = cmp.mapping.scroll_docs(4),
-            -- 	["<C-Space>"] = cmp.mapping.complete(),
-            -- 	["<C-c>"] = cmp.mapping.abort(),
-            -- 	-- Accept currently selected item. Set `select` to `false` to
-            -- 	-- only confirm explicitly selected items.
-            -- 	["<CR>"] = cmp.mapping.confirm({ select = false }),
-            -- }),
             sources = {
+                { name = "nvim_lsp_document_symbol" },
                 { name = "buffer" },
             },
         })
 
         -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline(":", {
-            -- mapping = cmp.mapping.preset.cmdline(),
-            -- mapping = cmp.mapping.preset.cmdline({
-            -- 	["<C-k>"] = cmp.mapping.select_prev_item(),
-            -- 	["<C-j>"] = cmp.mapping.select_next_item(),
-            -- }),
-            -- mapping = cmp.mapping.preset.insert({
-            -- 	["<C-k>"] = cmp.mapping.select_prev_item(),
-            -- 	["<C-j>"] = cmp.mapping.select_next_item(),
-            -- 	-- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-            -- 	-- ["<C-d>"] = cmp.mapping.scroll_docs(4),
-            -- 	["<C-Space>"] = cmp.mapping.complete(),
-            -- 	["<C-c>"] = cmp.mapping.abort(),
-            -- 	-- Accept currently selected item. Set `select` to `false` to
-            -- 	-- only confirm explicitly selected items.
-            -- 	["<CR>"] = cmp.mapping.confirm({ select = false }),
-            -- }),
             sources = cmp.config.sources({
                 { name = "cmdline" },
             }, {

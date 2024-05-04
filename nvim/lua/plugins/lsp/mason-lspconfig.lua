@@ -7,6 +7,8 @@ return {
         configs.setup({
             ensure_installed = {
                 --"asm_lsp",
+                -- "css_variables",
+                "cssls",
                 "lua_ls",
                 "jsonls",
                 "clangd",
@@ -20,7 +22,7 @@ return {
                 "bashls",
                 "awk_ls",
                 "html",
-                "cssls",
+                "templ",
                 "tsserver",
                 "tailwindcss",
             },
@@ -29,6 +31,19 @@ return {
         configs.setup_handlers({
             function(server_name)
                 lspconfig[server_name].setup({})
+            end,
+            ["html"] = function()
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+                lspconfig.html.setup({
+                    capabilities = capabilities,
+                    filetypes = {
+                        "html",
+                        "templ",
+                        "ejs",
+                    },
+                })
             end,
             ["jsonls"] = function()
                 local capabilities = vim.lsp.protocol.make_client_capabilities()

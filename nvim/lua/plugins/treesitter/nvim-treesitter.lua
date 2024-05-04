@@ -83,11 +83,6 @@ return {
             filetype = "ejs",
         }
 
-        local abc = function()
-            print("abc")
-        end
-        abc()
-
         local pallete = require("nightfox.palette").load("dayfox")
         local color = require("nightfox.lib.color")
 

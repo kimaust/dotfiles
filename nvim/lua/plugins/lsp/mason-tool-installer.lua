@@ -5,18 +5,21 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
+                "bash-language-server",
                 "djlint",
-                "prettierd",
                 "eslint_d",
+                "editorconfig-checker",
+                "htmlhint",
                 -- "stylua",
                 -- Fails on MSYS, need to check.
                 -- "luacheck",
-                "bash-language-server",
                 "lua-language-server",
-                "vim-language-server",
+                "prettierd",
+                "stylelint",
+                "sonarlint-language-server",
                 "shellcheck",
+                "vim-language-server",
                 -- "misspell",
-                "editorconfig-checker",
             },
             auto_update = false,
             run_on_start = true,
