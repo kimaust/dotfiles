@@ -5,7 +5,7 @@ return {
         scrollview.setup({
             auto_mouse = false,
             hover = false,
-            win_blend = 0,
+            winblend = 0,
             mode = "simple",
             excluded_filetypes = { "nerdtree" },
             current_only = true,
@@ -14,13 +14,14 @@ return {
                 "conflicts",
                 "cursor",
                 "diagnostics",
-                "loclist",
-                "quickfix",
+                -- "loclist",
+                -- "quickfix",
                 "search",
-                "spell",
-                "textwidth",
-                "trail",
+                -- "spell",
+                -- "textwidth",
+                -- "trail",
             },
+            signs_max_per_row = 3,
         })
     end,
 }

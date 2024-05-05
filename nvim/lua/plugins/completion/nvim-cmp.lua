@@ -5,6 +5,7 @@ return {
         { "hrsh7th/cmp-nvim-lsp", lazy = false },
         { "hrsh7th/cmp-nvim-lsp-signature-help", lazy = false },
         { "hrsh7th/cmp-nvim-lsp-document-symbol", lazy = false },
+        -- { "Jezda1337/nvim-html-css", lazy = false },
         { "JMarkin/cmp-diag-codes", lazy = false },
         -- Completion source for recommending text within the buffer.
         { "hrsh7th/cmp-buffer", lazy = false },
@@ -29,6 +30,9 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
 
+        local ELLIPSIS_CHAR = "…"
+        local MAX_LABEL_WIDTH = 20
+        local MIN_LABEL_WIDTH = 20
         cmp.setup({
             performance = {
                 -- debounce = 100,
@@ -76,13 +80,19 @@ return {
                 { name = "nvim_lsp", priority = 100 },
                 { name = "nvim_lsp_signature_help", priority = 99 },
                 { name = "luasnip" },
+                -- {
+                --     name = "html-css",
+                --     option = {
+                --         -- your configuration here
+                --     },
+                -- },
                 {
                     name = "diag-codes",
                     -- default completion available only in comment context
                     -- use false if you want to get in other context
                     option = { in_comment = true },
                 },
-                { name = "copilot", priority = 0 },
+                -- { name = "copilot", priority = 0 },
             }, {
                 { name = "path" },
                 -- { name = "buffer" },
@@ -101,6 +111,19 @@ return {
                     cmp.config.compare.order,
                     -- require("copilot_cmp.comparators").prioritize,
                 },
+            },
+            formatting = {
+                format = function(entry, vim_item)
+                    local label = vim_item.abbr
+                    local truncated_label = vim.fn.strcharpart(label, 0, MAX_LABEL_WIDTH)
+                    if truncated_label ~= label then
+                        vim_item.abbr = truncated_label .. ELLIPSIS_CHAR
+                    elseif string.len(label) < MIN_LABEL_WIDTH then
+                        local padding = string.rep(" ", MIN_LABEL_WIDTH - string.len(label))
+                        vim_item.abbr = label .. padding
+                    end
+                    return vim_item
+                end,
             },
         })
 

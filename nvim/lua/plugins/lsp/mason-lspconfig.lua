@@ -7,8 +7,10 @@ return {
         configs.setup({
             ensure_installed = {
                 --"asm_lsp",
+                -- Will be available at some point...
                 -- "css_variables",
                 "cssls",
+                "cssmodules_ls",
                 "lua_ls",
                 "jsonls",
                 "clangd",
@@ -43,6 +45,15 @@ return {
                         "templ",
                         "ejs",
                     },
+                })
+            end,
+            ["cssls"] = function()
+                --Enable (broadcasting) snippet capability for completion.
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+                lspconfig.cssls.setup({
+                    capabilities = capabilities,
                 })
             end,
             ["jsonls"] = function()

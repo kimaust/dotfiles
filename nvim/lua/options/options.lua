@@ -2,20 +2,23 @@
 vim.opt.timeout = false
 vim.opt.ttimeout = false
 
---Fix for Windows
+-- Disable mouse
+vim.opt.mouse = ""
+-- Disable folding
+vim.opt.foldenable = false
 
 -- Turn on line numbering and relative numbering.
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- Always draw sign to avoid resizing when in normal mode.
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:2"
 
 -- Split new window to below and right instead of top and left.
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Keep the cursor in the center when scrolling
-vim.opt.scrolloff = 999
+-- vim.opt.scrolloff = 999
 
 -- Enable cursor go past area with no characters for block mode.
 -- Useful for visual block mode.
