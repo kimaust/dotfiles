@@ -14,6 +14,9 @@ return {
                 hover = {
                     enabled = false,
                 },
+                tab_size = 18,
+                max_name_length = 18,
+                show_buffer_icons = false,
                 always_show_bufferline = true,
                 auto_toggle_bufferline = true,
             },

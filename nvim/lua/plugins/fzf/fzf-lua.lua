@@ -54,12 +54,8 @@ return {
         local utils = require("utils")
         local invoke_with_shell = utils.invoke_with_shell
 
-        vim.keymap.set(
-            { "n", "i", "v" },
-            "<C-p>",
-            invoke_with_shell("FzfLua files"),
-            { silent = true }
-        )
+        local opts = { silent = true, noremap = true }
+        vim.keymap.set({ "n", "i", "v" }, "<C-p>", invoke_with_shell("FzfLua files"), opts)
 
         -- vim.keymap.set({"n", "i", "v"}, "g"
         vim.keymap.set(
@@ -89,20 +85,10 @@ return {
             invoke_with_shell("FzfLua keymaps"),
             { silent = true }
         )
-
-        vim.keymap.set(
-            { "n", "v" },
-            "<leader>sh",
-            invoke_with_shell("FzfLua helptags"),
-            { silent = true }
-        )
-
-        vim.keymap.set(
-            { "n", "v" },
-            "<leader>of",
-            invoke_with_shell("FzfLua oldfiles"),
-            { silent = true }
-        )
+        vim.keymap.set({ "n", "v" }, "<leader>sh", "<Cmd>FzfLua helptags<CR>", opts)
+        vim.keymap.set({ "n", "v" }, "<leader>sm", "<Cmd>FzfLua marks<CR>", opts)
+        vim.keymap.set({ "n", "v" }, "<leader>sc", "<Cmd>FzfLua commands<CR>", opts)
+        vim.keymap.set({ "n", "v" }, "<leader>so", "<Cmd>FzfLua oldfiles<CR>", opts)
 
         local dir_switcher = function(opts)
             opts = opts or {}
