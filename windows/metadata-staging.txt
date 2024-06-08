@@ -1,0 +1,4 @@
+Disable automatic driver installation to workaround the metadata-staging issue.
+https://answers.microsoft.com/en-us/windows/forum/all/metadata-staging-failed-result0x80070490-for/73130c25-0414-4925-8368-ee42c731d554?page=1
+
+Set from advanced system settings
