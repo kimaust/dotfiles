@@ -61,12 +61,8 @@
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-
 # Antigen plugin manager
-source $HOME/dotfiles/zsh/antigen.zsh
+source "$HOME/antigen.zsh"
 
 # Load the oh-my-zsh library for some bundles
 antigen use oh-my-zsh
@@ -131,11 +127,6 @@ export WINDOWS_USERNAME="k"
 export LS_COLORS=$LS_COLORS:'ow=1;34:';
 alias ls="ls -la --color"
 
-# WSL settings
-alias winc="cd /mnt/c/"
-
-alias winy="cd /mnt/y/"
-
 # Vim settings
 alias vi=nvim
 alias vim=nvim
@@ -157,10 +148,6 @@ __git_files () {
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 # Disable checkout completion of remote branches for zsh.
 zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
-
-setx WHKD_CONFIG_HOME "$HOME/dotfiles/komorebi" > /dev/null 2>&1
-export WHKD_CONFIG_HOME="$HOME/dotfiles/komorebi"
-export WSLENV="$WSLENV:WHKD_CONFIG_HOME/w"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
