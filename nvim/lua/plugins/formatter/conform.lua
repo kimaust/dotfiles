@@ -17,6 +17,7 @@ return {
                 pug = { "prettierd" },
                 handlebars = { "prettierd" },
                 ejs = { "prettierd" },
+                python = { "autopep8" }
             },
             -- Set up format on save
             format_on_save = function(bufnr)

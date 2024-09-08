@@ -4,7 +4,7 @@
 
 !+Enter::
 {
-    alacrittyPath = "C:\Program Files\Alacritty\alacritty.exe"
+    alacrittyPath := "C:\Program Files\Alacritty\alacritty.exe"
     alacrittyConfigPath := "C:\msys64\home\k\dotfiles\alacritty\alacritty.toml"
     Run alacrittyPath . " --config-file=" . alacrittyConfigPath
 }

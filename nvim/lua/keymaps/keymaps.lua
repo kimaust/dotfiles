@@ -9,7 +9,6 @@ vim.keymap.set({ "n" }, "<C-x>", "xh", opts)
 -- vim.keymap.set({ "i" }, "<C-z>", "<Esc>ua",  opts)
 vim.keymap.set({ "n", "v" }, "<C-z>", "u", opts)
 vim.keymap.set({ "n", "v" }, "u", "<Nop>", opts)
-
 vim.keymap.set({ "n", "v", "i", "t" }, "<C-t>", "<Nop>", opts)
 
 -- inoremap <expr> <silent> <cr> pumvisible() ? "<c-y>" : "<c-g>u<cr>"

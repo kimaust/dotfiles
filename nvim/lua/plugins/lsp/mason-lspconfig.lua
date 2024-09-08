@@ -27,6 +27,8 @@ return {
                 "templ",
                 "tsserver",
                 "tailwindcss",
+                "pylsp",
+                "pyright"
             },
             automatic_installation = true,
         })

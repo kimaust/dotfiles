@@ -30,8 +30,12 @@ return {
                     layout = "vertical",
                 },
             },
+            -- builtin = {
+                -- { disable = { "exe" } },
+            -- },
             files = {
                 previewer = false,
+                fd_opts = [[--exclude "*.{exe,pyc,gif,dll,pyd}"]],
                 fzf_opts = {
                     ["--ansi"] = false,
                 },

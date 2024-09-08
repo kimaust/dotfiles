@@ -8,6 +8,7 @@ if vim.fn.has("win32") or vim.fn.has("win64") then
     require("options.msys")
 end
 require("keymaps.keymaps")
+require("keymaps.keymaps-comments")
 require("keymaps.keymaps-buffers")
 require("keymaps.keymaps-movements")
 require("keymaps.keymaps-windows")
