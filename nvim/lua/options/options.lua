@@ -7,9 +7,8 @@ vim.opt.mouse = ""
 -- Disable folding
 vim.opt.foldenable = false
 
--- Turn on line numbering and relative numbering.
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 -- Always draw sign to avoid resizing when in normal mode.
 vim.opt.signcolumn = "yes:2"
 
