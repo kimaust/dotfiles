@@ -11,8 +11,7 @@
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -196,6 +195,14 @@ source $HOME/immersive.zsh > /dev/null 2>&1
 
 alias git="C:/Program\ Files/Git/bin/git.exe"
 alias emerge="emerge --ask --verbose"
+# alias repeat="$HOME/dotfiles/windows/keyrate-tool/run.sh"
+repeatrate() {
+  (
+      cd "$HOME/dotfiles/windows/keyrate-tool" || { echo "Error: Directory $HOME/def does not exist."; return 1; }
+    ./run.sh "$@"
+    )
+}
+alias oe="explorer.exe ."
 
 # fzf
 # FZF_DEFAULT_COMMAND="zsh"
